@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">A1 CISC 325</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="keiths_name">Keith Weaver</string>
+    <string name="hannahs_name">Hannah Huckstep</string>
+    <string name="chriss_name">Chris Radford</string>
+    <string name="traviss_name">Travis Rhee</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
