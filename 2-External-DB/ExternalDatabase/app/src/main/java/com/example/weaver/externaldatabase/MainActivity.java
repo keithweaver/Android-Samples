@@ -80,6 +80,7 @@ public class MainActivity extends ActionBarActivity {
                         "Name : " + json.getString("FirstName") + " " + json.getString("LastName") + "\n" +
                         "Age : " + json.getString("Age") + "\n" +
                         "Mobile Using : " + json.getString("Mobile") + "\n\n";
+                System.out.println(s);
             }
             resultView.setText(s);
         }catch(Exception e){
