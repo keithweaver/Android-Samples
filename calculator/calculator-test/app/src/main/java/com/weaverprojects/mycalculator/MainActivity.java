@@ -6,10 +6,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
+    private int value1 = -1;
+    private int value2 = -1;
+
+    private boolean plusItem = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +34,9 @@ public class MainActivity extends ActionBarActivity {
         Button plus_btn = (Button) findViewById(R.id.plus_btn);
         Button equal_btn = (Button) findViewById(R.id.equal_btn);
 
-        final EditText result_label = (EditText) findViewById(R.id.result_label);
+        final TextView result_label = (TextView) findViewById(R.id.result_label);
 
-        int value1 = -1;
-        int value2 = -1;
+
 
         equal_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +48,9 @@ public class MainActivity extends ActionBarActivity {
                     if(value2 != -1){
                         int result = value1 + value2;
                         result_label.setText(String.valueOf(result));
+                        plusItem = false;
+                        value1 = 0;
+                        value2 = 0;
                     }
                 }
             }
@@ -54,96 +61,96 @@ public class MainActivity extends ActionBarActivity {
                 //double centimeters = Double.valueOf(centimetersItem.getText().toString());
                 //double inches = centimeters * 0.393700787;
                 //inchesItem.setText(String.valueOf(inches));
-
+                plusItem = true;
             }
         });
         one_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 if(value1 == -1){
-                     //value1 = 1;
+                 if(plusItem == false){
+                     value1 = 1;
                  }else{
-                     //value2 = 1;
+                     value2 = 1;
                  }
             }
         });
         two_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 2;
+                if(plusItem == false){
+                    value1 = 2;
                 }else{
-                    //value2 = 2;
+                    value2 = 2;
                 }
             }
         });
         three_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 3;
+                if(plusItem == false){
+                    value1 = 3;
                 }else{
-                    //value2 = 3;
+                    value2 = 3;
                 }
             }
         });
         four_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 4;
+                if(plusItem == false){
+                    value1 = 4;
                 }else{
-                    //value2 = 4;
+                    value2 = 4;
                 }
             }
         });
         five_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 5;
+                if(plusItem == false){
+                    value1 = 5;
                 }else{
-                    //value2 = 5;
+                    value2 = 5;
                 }
             }
         });
         six_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 6;
+                if(plusItem == false){
+                    value1 = 6;
                 }else{
-                    //value2 = 6;
+                    value2 = 6;
                 }
             }
         });
         seven_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 7;
+                if(plusItem == false){
+                    value1 = 7;
                 }else{
-                    //value2 = 7;
+                    value2 = 7;
                 }
             }
         });
         eight_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 8;
+                if(plusItem == false){
+                    value1 = 8;
                 }else{
-                    //value2 = 8;
+                    value2 = 8;
                 }
             }
         });
         nine_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(value1 == -1){
-                    //value1 = 9;
+                if(plusItem == false){
+                    value1 = 9;
                 }else{
-                    //value2 = 9;
+                    value2 = 9;
                 }
             }
         });
