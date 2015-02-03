@@ -1,0 +1,4 @@
+/Users/Weaver/Desktop/my.android/github/android-learning/parse-setup/ParseStarterProject/build/intermediates/classes/debug
+/Users/Weaver/Desktop/my.android/github/android-learning/parse-setup/ParseStarterProject/build/intermediates/pre-dexed/debug/bolts-android-1.1.4-99303f6ec7463bb5d386e666ece7629317d368c3.jar
+/Users/Weaver/Desktop/my.android/github/android-learning/parse-setup/ParseStarterProject/build/intermediates/pre-dexed/debug/ParseCrashReporting-1.8.2-aa79dfd6e4b62f77d91d1bb202c7d90168be3cd2.jar
+/Users/Weaver/Desktop/my.android/github/android-learning/parse-setup/ParseStarterProject/build/intermediates/pre-dexed/debug/Parse-1.8.2-3a6f7b6e1c1017422adde77190aa1829f8be5903.jar
