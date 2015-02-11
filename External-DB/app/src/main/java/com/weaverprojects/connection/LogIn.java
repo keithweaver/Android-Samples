@@ -1,6 +1,8 @@
 package com.weaverprojects.connection;
 
-import android.support.v7.app.ActionBarActivity;
+
+import android.app.Application;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +29,10 @@ import org.apache.http.client.methods.HttpGet;
 import java.net.URL;
 import java.net.URI;
 
+
+
+
+
 public class LogIn extends ActionBarActivity {
 
     @Override
@@ -50,39 +56,12 @@ public class LogIn extends ActionBarActivity {
                 System.out.println("PASSWORD:[" + pss + "]");
 
 
-                String link = "http://www.weaverstartup.com/android/db_test.php";
-                String result = null;
-                InputStream is = null;
+                // Enable Local Datastore.
+                //Parse.enableLocalDatastore(this);
 
-                try {
-                    //URL url = new URL(link);
-                    HttpClient client = new DefaultHttpClient();
-                    HttpPost httppost = new HttpPost("http://www.weaverstartup.com/android/db_test.php");
-
-                    //HttpGet request = new HttpGet();
-                    //request.setURI(new URI(link));
-                    HttpResponse response = client.execute(httppost);
-
-                    HttpEntity entity = response.getEntity();
-                    is = entity.getContent();
-
-                    Log.e("log_tag","Connection success");
-                    System.out.println("Connection success");
+                //Parse.initialize(this, "rXIkL4z2GueRJv9StGQGXaMqJoC70jCK25fLBBFK", "FGgkFkuk2IEXnnSYOpyqMMXTZ80CcgL1btochvkA");
 
 
-                }catch(Exception e){
-                    System.out.println("Unable to connect");
-                }
-
-                //-----
-                //-- CONVERT RESPOND TO STRING
-                //-----
-
-                try{
-
-                }catch(Exception e){
-                    System.out.println("Unable to convert");
-                }
 
             }
         });
