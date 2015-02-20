@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">working-w-tut</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="parseAppId">ACnXHKlS8m40Xppjus7W21FJes5Fjw7cKdxA2sBX</string>
+    <string name="parseClientId">XxPYpJBO1XC3yqMs0l1FAUvXpM3wYqN8E7Gjf2Pq</string>
+</resources>
