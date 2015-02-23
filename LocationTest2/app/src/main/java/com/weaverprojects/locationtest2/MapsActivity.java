@@ -1,20 +1,19 @@
-package com.weaverprojects.locationtest1;
-
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.view.Menu;
-
+package com.weaverprojects.locationtest2;
 
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
 
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-public class MapsActivity extends MapActivity  {
+public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
-    //private MapController controller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,28 +21,20 @@ public class MapsActivity extends MapActivity  {
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
 
-
-
-        //MapController control = view.getController();
-        LocationManager manager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        LocationListener listener = new LocationListener(){
-            public void onLocationChanged(Location location){
-
-            }
-            public void onProviderDisable(Location location){
-
-            }
-            public void onProviderEnable(Location location){
-
-            }
-            public void onStatusChanged(String i, int a, Bundle e){
-
-            }
-        };
-        manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, listener);
-
-
-
+        /*
+        Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation("AIzaSyDo32QInGCCr504D3-PF_j4ex69gXIYdqI");
+        if (mLastLocation != null) {
+            System.out.println(String.valueOf(mLastLocation.getLatitude()));
+            System.out.println(String.valueOf(mLastLocation.getLongitude()));
+        }
+        */
+        GPSTracker gpsTracker = new GPSTracker(String.valueOf(Context.LOCATION_SERVICE));
+        String stringLatitude = "", stringLongitude = "", nameOfLocation="";
+        if (gpsTracker.canGetLocation()) {
+            stringLatitude = String.valueOf(gpsTracker.latitude);
+            stringLongitude = String.valueOf(gpsTracker.longitude);
+            nameOfLocation = ConvertPointToLocation(stringLatitude,stringLongitude);
+        }
     }
 
     @Override
@@ -89,4 +80,5 @@ public class MapsActivity extends MapActivity  {
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
+
 }
