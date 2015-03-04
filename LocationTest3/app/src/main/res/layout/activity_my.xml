@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MyActivity"
+    android:background="#ffffffff">
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff2e2e2e"
+        android:weightSum="1">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageButton
+                android:layout_width="65dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageButton2"
+                android:scaleType="fitXY"
+                android:src="@drawable/config_128"
+                android:layout_gravity="left"
+                android:background="#ff2e2e2e"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:paddingRight="7dp"
+                android:paddingLeft="7dp" />
+
+            <GridLayout
+                android:layout_width="351dp"
+                android:layout_height="fill_parent"
+                android:layout_gravity="right"
+                android:layout_row="0"
+                android:layout_column="8">
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/imageButton3"
+                    android:src="@drawable/male_128"
+                    android:layout_marginRight="0dp"
+                    android:scaleType="fitXY"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="5dp"
+                    android:layout_row="0"
+                    android:layout_column="10"
+                    android:background="#ff2e2e2e" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/imageButton"
+                    android:src="@drawable/contact_128"
+                    android:scaleType="fitXY"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_row="0"
+                    android:layout_column="11"
+                    android:background="#ff2e2e2e" />
+            </GridLayout>
+        </GridLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffffff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/recent_row"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="0dp"
+            android:text="RECENT" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff959595">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffffff"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="1dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/textView"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/imageView"
+                android:layout_row="0"
+                android:layout_column="19"
+                android:src="@drawable/arrow274"
+                android:layout_marginTop="10dp" />
+
+        </GridLayout>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"></TableRow>
+
+
+</LinearLayout>
