@@ -30,42 +30,34 @@
                 android:paddingRight="7dp"
                 android:paddingLeft="7dp" />
 
-            <GridLayout
-                android:layout_width="351dp"
-                android:layout_height="fill_parent"
-                android:layout_gravity="right"
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageButton3"
+                android:src="@drawable/male_128"
+                android:scaleType="fitXY"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="5dp"
                 android:layout_row="0"
-                android:layout_column="8">
+                android:layout_column="2"
+                android:background="#ff2e2e2e" />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:id="@+id/imageButton3"
-                    android:src="@drawable/male_128"
-                    android:layout_marginRight="0dp"
-                    android:scaleType="fitXY"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingRight="5dp"
-                    android:layout_row="0"
-                    android:layout_column="10"
-                    android:background="#ff2e2e2e" />
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageButton"
+                android:src="@drawable/contact_128"
+                android:scaleType="fitXY"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:paddingLeft="5dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:background="#ff2e2e2e" />
 
-                <ImageButton
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:id="@+id/imageButton"
-                    android:src="@drawable/contact_128"
-                    android:scaleType="fitXY"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="5dp"
-                    android:paddingTop="5dp"
-                    android:paddingLeft="5dp"
-                    android:layout_row="0"
-                    android:layout_column="11"
-                    android:background="#ff2e2e2e" />
-            </GridLayout>
         </GridLayout>
 
     </TableRow>

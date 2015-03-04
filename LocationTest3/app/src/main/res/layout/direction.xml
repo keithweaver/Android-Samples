@@ -3,7 +3,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffffff">
+    android:background="#ffffffff"
+    android:weightSum="1">
 
     <TableRow
         android:layout_width="fill_parent"
@@ -47,7 +48,9 @@
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:gravity="center_vertical|center"
+        android:layout_weight="0.24">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -56,9 +59,7 @@
             android:layout_row="0"
             android:layout_column="0"
             android:src="@drawable/black133"
-            android:layout_marginTop="120dp"
-            android:layout_weight="0.33"
-            android:layout_marginLeft="170dp" />
+            android:layout_weight="0.33" />
     </TableRow>
 
     <TableRow
@@ -81,7 +82,7 @@
     <TableRow
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="10dp"
         android:gravity="center">
 
         <TextView
