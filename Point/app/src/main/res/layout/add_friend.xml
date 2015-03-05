@@ -20,7 +20,7 @@
                 android:layout_row="0"
                 android:layout_column="0"
                 android:focusableInTouchMode="false"
-                android:src="@drawable/search94"
+                android:src="@drawable/search94_W"
                 android:nestedScrollingEnabled="true"
                 android:paddingLeft="13dp"
                 android:paddingTop="0dp"
@@ -41,7 +41,7 @@
                 android:id="@+id/imageView8"
                 android:layout_row="0"
                 android:layout_column="3"
-                android:src="@drawable/recycle72"
+                android:src="@drawable/recycle72_w"
                 android:paddingLeft="13dp"
                 android:paddingRight="7dp"
                 android:paddingTop="0dp"
@@ -53,7 +53,7 @@
                 android:id="@+id/imageView9"
                 android:layout_row="0"
                 android:layout_column="4"
-                android:src="@drawable/arrow615"
+                android:src="@drawable/arrow615_w"
                 android:paddingRight="13dp"
                 android:paddingLeft="5dp" />
         </GridLayout>

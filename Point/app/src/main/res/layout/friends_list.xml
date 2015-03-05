@@ -21,7 +21,7 @@
                 android:layout_row="0"
                 android:layout_column="0"
                 android:focusableInTouchMode="false"
-                android:src="@drawable/configuration17"
+                android:src="@drawable/configuration17_w"
                 android:nestedScrollingEnabled="true"
                 android:paddingLeft="13dp"
                 android:paddingTop="0dp"
@@ -34,7 +34,7 @@
                 android:id="@+id/imageView2"
                 android:layout_row="0"
                 android:layout_column="3"
-                android:src="@drawable/alarm45"
+                android:src="@drawable/alarm45_w"
                 android:paddingLeft="13dp"
                 android:paddingRight="7dp"
                 android:paddingTop="0dp"
@@ -46,7 +46,7 @@
                 android:id="@+id/imageView3"
                 android:layout_row="0"
                 android:layout_column="4"
-                android:src="@drawable/add174"
+                android:src="@drawable/add174_w"
                 android:paddingRight="13dp"
                 android:paddingLeft="5dp" />
         </GridLayout>
@@ -107,7 +107,7 @@
                 android:id="@+id/imageView"
                 android:layout_row="0"
                 android:layout_column="2"
-                android:src="@drawable/arrow613"
+                android:src="@drawable/arrow613_g"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp" />
         </GridLayout>
@@ -172,7 +172,7 @@
                 android:id="@+id/imageView4"
                 android:layout_row="0"
                 android:layout_column="2"
-                android:src="@drawable/arrow613"
+                android:src="@drawable/arrow613_g"
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp" />
         </GridLayout>
