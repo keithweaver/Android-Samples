@@ -73,46 +73,113 @@
         </GridLayout>
     </TableRow>
 
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/a_listview"
+        android:layout_gravity="center_horizontal"
+        android:background="#f1f1f1"/>
+
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f1f1f1">
+        android:background="#088A08">
 
         <GridLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
+            android:layout_marginBottom="1dp"
             android:background="#ffffffff"
-            android:layout_marginBottom="1dp" >
+            android:layout_marginTop="1dp" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Keith Weaver"
-                android:id="@+id/textView10312"
-                android:layout_row="0"
-                android:layout_column="0"
+                android:text="B"
+                android:id="@+id/textView11"
                 android:paddingLeft="20dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:paddingRight="20dp" />
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:id="@+id/imageView3123"
-                android:layout_row="0"
-                android:layout_column="2"
-                android:src="@drawable/recycle72"
-                android:paddingTop="8dp"
-                android:paddingBottom="8dp" />
+                android:paddingRight="20dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:textSize="14dp" />
         </GridLayout>
     </TableRow>
+
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
-        android:layout_gravity="center_horizontal" />
+        android:id="@+id/b_listview"
+        android:layout_gravity="center_horizontal"
+        android:background="#f1f1f1"/>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#088A08">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="1dp"
+            android:background="#ffffffff"
+            android:layout_marginTop="1dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="C"
+                android:id="@+id/textView12"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:textSize="14dp" />
+        </GridLayout>
+    </TableRow>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/c_listview"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffffff"/>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#088A08">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="1dp"
+            android:background="#ffffffff"
+            android:layout_marginTop="1dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="D"
+                android:id="@+id/textView13"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:textSize="14dp" />
+        </GridLayout>
+    </TableRow>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/d_listview"
+        android:layout_gravity="center_horizontal"
+        android:background="#ffffffff"/>
 
 </LinearLayout>
