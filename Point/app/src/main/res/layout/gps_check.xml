@@ -7,7 +7,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Continue"
-        android:id="@+id/continue_btn"
+        android:id="@+id/textView9"
         android:layout_gravity="center_horizontal"
         android:enabled="true"
         android:clickable="true" />
