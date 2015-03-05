@@ -35,6 +35,43 @@
 
             </intent-filter>
         </activity>
+        <activity
+            android:name=".add_friend"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.add_friend"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".start"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.start"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".signup"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.signup"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.login"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+
+            </intent-filter>
+        </activity>
+
 
     </application>
 

@@ -43,7 +43,7 @@
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="50dp"
-                android:id="@+id/imageView3"
+                android:id="@+id/add_friend_btn"
                 android:layout_row="0"
                 android:layout_column="4"
                 android:src="@drawable/add174_w"

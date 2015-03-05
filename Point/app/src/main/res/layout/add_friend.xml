@@ -38,18 +38,6 @@
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="50dp"
-                android:id="@+id/imageView8"
-                android:layout_row="0"
-                android:layout_column="3"
-                android:src="@drawable/recycle72_w"
-                android:paddingLeft="13dp"
-                android:paddingRight="7dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="0dp" />
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="50dp"
                 android:id="@+id/imageView9"
                 android:layout_row="0"
                 android:layout_column="4"
@@ -58,4 +46,67 @@
                 android:paddingLeft="5dp" />
         </GridLayout>
     </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#088A08">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="1dp"
+            android:background="#ffffffff"
+            android:layout_marginTop="1dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="A"
+                android:id="@+id/textView10"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:textSize="14dp" />
+        </GridLayout>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1f1f1">
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffffff"
+            android:layout_marginBottom="1dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Keith Weaver"
+                android:id="@+id/textView10312"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingRight="20dp" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:id="@+id/imageView3123"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:src="@drawable/recycle72"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
+        </GridLayout>
+    </TableRow>
+
 </LinearLayout>

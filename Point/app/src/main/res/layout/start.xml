@@ -27,9 +27,11 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:id="@+id/imageView11"
+            android:id="@+id/login_open_btn"
             android:src="@drawable/login_w"
-            android:scaleType="fitCenter" />
+            android:scaleType="fitCenter"
+            android:focusableInTouchMode="true"
+            android:clickable="true" />
     </TableRow>
 
     <TableRow
@@ -41,7 +43,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:id="@+id/imageView12"
+            android:id="@+id/signup_open_btn"
             android:src="@drawable/signup_w"
             android:scaleType="fitCenter" />
     </TableRow>
