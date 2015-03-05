@@ -6,8 +6,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Keith Weaver"
-        android:id="@+id/textView10312"
+        android:id="@+id/text1"
 
         android:paddingLeft="20dp"
         android:paddingTop="10dp"
@@ -18,7 +17,7 @@
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:id="@+id/imageView3123"
-        
+
         android:src="@drawable/recycle72"
         android:paddingTop="8dp"
         android:paddingBottom="8dp" />
