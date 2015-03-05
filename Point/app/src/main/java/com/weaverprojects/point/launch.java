@@ -22,7 +22,7 @@ public class launch extends Activity{
         Button continue_btn = (Button) findViewById(R.id.continue_btn);
         continue_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent("android.intent.action.start"));
+                startActivity(new Intent("android.intent.action.add_friend"));
             }
         });
         /*END OF CODE THAT GETS  REMOVE */
