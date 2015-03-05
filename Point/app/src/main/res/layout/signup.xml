@@ -54,8 +54,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:id="@+id/editText5"
-            android:textColor="#ffffffff" />
+            android:id="@+id/first_name_textbox"
+            android:textColor="#ffffffff"
+            android:layout_weight="1" />
     </TableRow>
 
     <TableRow
@@ -77,8 +78,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:id="@+id/editText6"
-            android:textColor="#ffffffff" />
+            android:id="@+id/last_name_textbox"
+            android:textColor="#ffffffff"
+            android:layout_weight="1" />
     </TableRow>
 
     <TableRow
@@ -98,7 +100,7 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2014"
+            android:id="@+id/login_textbox"
             android:layout_weight="1"
             android:textColor="#ffffffff" />
     </TableRow>
@@ -122,8 +124,42 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText4"
-            android:textColor="#ffffffff" />
+            android:id="@+id/password_textbox"
+            android:textColor="#ffffffff"
+            android:layout_weight="1" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Password has to be at least 3 characters long."
+            android:id="@+id/textView9"
+            android:textColor="#ffffffff"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textSize="12dp" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/error_label"
+            android:textColor="#DF0101" />
     </TableRow>
 
     <TableRow
@@ -136,7 +172,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
-            android:id="@+id/button2"
+            android:id="@+id/sign_up_btn"
             android:background="#ffffffff"
             android:textColor="#088A08" />
     </TableRow>
