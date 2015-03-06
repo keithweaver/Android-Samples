@@ -1,0 +1,6 @@
+/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/classes/debug
+/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-f4efc1b7c471b9c945015a92dcbfccc6574fb9ce.jar
+/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-ec927f01730accf4e11e3c4a52db43e609303e8d.jar
+/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/classes-c03d15bad16298fabd90a8a323c58d34e6e1599a.jar
+/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/Parse-1.8.3-9a663b49303cf61045d9f144aeb32275ae3a3d85.jar
+/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/classes-da8bda9d40100fc96bd99199ac2506c3a256151c.jar

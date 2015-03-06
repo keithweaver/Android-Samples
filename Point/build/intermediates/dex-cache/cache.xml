@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-ec927f01730accf4e11e3c4a52db43e609303e8d.jar" />
+    </item>
+    <item
+        jar="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/libs/Parse-1.8.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="56dfc827c23c1f0be64eff2ef556633ea95b16ad">
+        <dex dex="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/Parse-1.8.3-9a663b49303cf61045d9f144aeb32275ae3a3d85.jar" />
+    </item>
+    <item
+        jar="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/classes-da8bda9d40100fc96bd99199ac2506c3a256151c.jar" />
+    </item>
+    <item
+        jar="/Users/Weaver/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-f4efc1b7c471b9c945015a92dcbfccc6574fb9ce.jar" />
+    </item>
+    <item
+        jar="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="/Users/Weaver/Desktop/my.android/github/android-learning/Point/app/build/intermediates/pre-dexed/debug/classes-c03d15bad16298fabd90a8a323c58d34e6e1599a.jar" />
+    </item>
+
+</items>
