@@ -2,15 +2,11 @@ package com.parse.starter;
 
 import android.app.Application;
 
-import com.parse.GetCallback;
 import com.parse.Parse;
 import com.parse.ParseACL;
 import com.parse.ParseCrashReporting;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
-import com.parse.*;
-
-import java.text.ParseException;
 
 
 public class ParseApplication extends Application {
@@ -28,7 +24,7 @@ public class ParseApplication extends Application {
 
 
     // Add your initialization code here
-    Parse.initialize(this, "APP_ID", "CLIENT_ID");
+    Parse.initialize(this, "ACnXHKlS8m40Xppjus7W21FJes5Fjw7cKdxA2sBX", "XxPYpJBO1XC3yqMs0l1FAUvXpM3wYqN8E7Gjf2Pq");
 
 
     ParseUser.enableAutomaticUser();
@@ -44,7 +40,7 @@ public class ParseApplication extends Application {
 
       //userInfo.put("/","item");
       //objId
-
+    /*
       ParseQuery<ParseObject> query = ParseQuery.getQuery("YourClassName");
       query.whereEqualTo("ID", "someID");
       query.getFirstInBackground("first_name", new GetCallback<ParseObject>() {
@@ -56,7 +52,7 @@ public class ParseApplication extends Application {
               }
           }
       });
-
+    */
 
       userInfo.saveInBackground();
 
