@@ -67,6 +67,7 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.Co
         @Override
         public void onProviderDisabled(String provider) {
             System.out.println("onProviderDisabled");
+            //turns off gps services
         }
     };
     /*
