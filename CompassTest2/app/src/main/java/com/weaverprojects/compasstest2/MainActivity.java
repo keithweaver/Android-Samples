@@ -2,6 +2,7 @@ package com.weaverprojects.compasstest2;
 
 import android.app.Activity;
 import android.content.Context;
+import android.hardware.GeomagneticField;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -13,6 +14,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -147,13 +150,14 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
         float azimuth_angle = event.values[0];
         float pitch_angle = event.values[1];
         float roll_angle = event.values[2];
-        double azimuth = (double) Math.toDegrees(azimuth_angle);
+        //double azimuth = (double) Math.toDegrees(azimuth_angle);
+        double azimuth = (double) azimuth_angle;
 
         try{
             if(mLastLocation == null){
                 //Log.v("LOCATION:","ITS NULL");
             }else{
-                Log.v("LOCATION:","ITS NOT NULL");
+                //Log.v("LOCATION:","ITS NOT NULL");
             }
         }catch(Exception e){
             Log.e("ERROR:","004");
@@ -168,11 +172,11 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
                 double myLocation_longitude_double = mLastLocation.getLongitude();
                 double myLocation_altitude_double = mLastLocation.getAltitude();
 
-                Log.v("LATITUDE DOUBLE:", String.valueOf(myLocation_latitude_double));
-                Log.v("LONGITUDE DOUBLE:", String.valueOf(myLocation_longitude_double));
-                Log.v("ALTITUDE DOUBLE:", String.valueOf(myLocation_altitude_double));
+                //Log.v("LATITUDE DOUBLE:", String.valueOf(myLocation_latitude_double));
+                //Log.v("LONGITUDE DOUBLE:", String.valueOf(myLocation_longitude_double));
+                //Log.v("ALTITUDE DOUBLE:", String.valueOf(myLocation_altitude_double));
                 //if(myLocation_altitude != 0 && myLocation_latitude && != 0)
-                /*
+
                     GeomagneticField geoField = new GeomagneticField(
                             (float) mLastLocation.getLatitude(),
                             (float) mLastLocation.getLongitude(),
@@ -180,15 +184,20 @@ public class MainActivity extends Activity implements GoogleApiClient.Connection
                             System.currentTimeMillis());
                     try {
                         azimuth += geoField.getDeclination(); // converts magnetic north into true north
-                        float bearing = mLastLocation.bearingTo(targetLocation); // (it's already in degrees)
-                        double direction = azimuth - bearing;
+                        //float bearing = mLastLocation.bearingTo(targetLocation); // (it's already in degrees)
+                        azimuth = azimuth % 360;
+                        //double direction = -azimuth * 360 / (2 * 3.14159f);
+                        float direction = (float) azimuth + mLastLocation.bearingTo( targetLocation );
+
+                        ImageView image_view = (ImageView) findViewById(R.id.imageView);
+                        image_view.setRotation(direction);
 
                         TextView main_label = (TextView) findViewById(R.id.main_label);
                         main_label.setText(String.valueOf(direction));
                     }catch (Exception e){
                         Log.e("ERROR:","004");
                     }
-                */
+
             }
         }catch(Exception e){
             Log.e("ERROR:","003");
