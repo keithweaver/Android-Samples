@@ -12,13 +12,11 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -48,7 +46,12 @@ public class MainActivity extends Activity {
 
         /* --- EDITED CODE ----- */
 
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("friends");
+        query.whereEqualTo("owner","keweav");
 
+
+        //THIS IS SELECT
+        /*
         ParseQuery<ParseObject> query = ParseQuery.getQuery("friends");
         query.whereEqualTo("owner", "keweav");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -64,7 +67,9 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        */
 
+        //THIS IS THE INSERT
         /*
         try {
             ParseObject userInfo = new ParseObject("friends");
@@ -75,6 +80,10 @@ public class MainActivity extends Activity {
             Log.e("ERROR","UNABLE TO ADD");
         }
         */
+
+
+
+
         /* --- TILL HERE -- */
         //friend_list.add("alittle");
         //friend_list.add("keweav");
