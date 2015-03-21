@@ -12,11 +12,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.parse.FindCallback;
 import com.parse.Parse;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -46,8 +48,8 @@ public class MainActivity extends Activity {
 
         /* --- EDITED CODE ----- */
 
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("friends");
-        query.whereEqualTo("owner","keweav");
+        //ParseQuery<ParseObject> query = ParseQuery.getQuery("friends");
+        //query.whereEqualTo("owner","keweav");
 
 
         //THIS IS SELECT
@@ -68,6 +70,22 @@ public class MainActivity extends Activity {
             }
         });
         */
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("User_Login");
+        query.whereEqualTo("username", "jguenth");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
+                if (e == null) {
+                    Log.d("score", "Retrieved " + parseObjects.size() + " scores");
+                    for(int i = 0;i < parseObjects.size();i++){
+                        Log.d("Item:",parseObjects.get(i).get("password").toString());
+                    }
+                } else {
+                    Log.d("score", "Error: " + e.getMessage());
+                }
+            }
+        });
+
 
         //THIS IS THE INSERT
         /*
