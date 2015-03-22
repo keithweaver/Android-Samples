@@ -70,6 +70,7 @@ public class MainActivity extends Activity {
             }
         });
         */
+        /*
         ParseQuery<ParseObject> query = ParseQuery.getQuery("User_Login");
         query.whereEqualTo("username", "jguenth");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -85,7 +86,7 @@ public class MainActivity extends Activity {
                 }
             }
         });
-
+        */
 
         //THIS IS THE INSERT
         /*
@@ -99,7 +100,22 @@ public class MainActivity extends Activity {
         }
         */
 
-
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("friends");
+        query.whereEqualTo("objectId","Xkt5B3raHJ");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, com.parse.ParseException e) {
+                if (e == null) {
+                    // iterate over all messages and delete them
+                    for(ParseObject row : parseObjects)
+                    {
+                        row.deleteEventually();
+                    }
+                } else {
+                    Log.d("Semothing went wrong. Show useful message based on ParseException data", e.getMessage());
+                }
+            }
+        });
 
 
         /* --- TILL HERE -- */
