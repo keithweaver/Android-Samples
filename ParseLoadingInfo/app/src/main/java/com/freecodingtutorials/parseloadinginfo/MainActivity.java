@@ -10,15 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
-import com.parse.FindCallback;
-import com.parse.Parse;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
+import com.parse.ParseAnalytics;
+import com.parse.ParsePush;
 
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -27,6 +25,8 @@ public class MainActivity extends Activity {
     ArrayList<String> friend_list = new ArrayList<String>();
     ArrayAdapter<String> a_adapter;
     ListView friend_listview;
+
+    String username = "keweav";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,13 +38,103 @@ public class MainActivity extends Activity {
             Log.e("ERROR","LAYOUT");
             Log.e("ERROR",e.toString());
         }
+        /*
         try {
             Parse.enableLocalDatastore(this);
+
             Parse.initialize(this, "ACnXHKlS8m40Xppjus7W21FJes5Fjw7cKdxA2sBX", "XxPYpJBO1XC3yqMs0l1FAUvXpM3wYqN8E7Gjf2Pq");
         }catch(Exception e){
             Log.e("ERROR 001:", e.toString());
             Log.e("ERROR 001:","UNABLE TO CONNECT");
         }
+        */
+        //------- PARSE PUSH STUFF
+        ParseAnalytics.trackAppOpened(getIntent());
+
+        //ParsePush.subscribeInBackground("MyChannel");
+        //String value = ParseInstallation.getCurrentInstallation().getString("gender");
+
+        /*
+        ParsePush push = new ParsePush();
+        push.setChannel("Giants");
+        push.setMessage("The Giants just scored! It's now 2-2 against the Mets.");
+        push.sendInBackground();
+        */
+        /*
+        ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+        installation.put("username", username);
+        installation.saveInBackground();
+
+        ParsePush parsePush = new ParsePush();
+        ParseQuery pQuery = ParseInstallation.getQuery(); // <-- Installation query
+        pQuery.whereEqualTo("username", username); // <-- you'll probably want to target someone that's not the current user, so modify accordingly
+        parsePush.sendMessageInBackground("Only for special people", pQuery);
+        */
+        //JSONObject object = new JSONObject();
+        /*
+        IntentFilter intentFilter = new IntentFilter("MyAction");
+        BroadcastReceiver pushReceiver;
+        pushReceiver = new BroadcastReceiver() {
+            public void onReceive(Context context, Intent intent) {
+                Bundle extras = intent.getExtras();
+                String message = extras != null ? extras.getString("com.parse.Data") : "";
+
+                try {
+                    //jObject = new JSONObject(message);
+                    Toast toast = Toast.makeText(context, message, Toast.LENGTH_SHORT);
+
+                    toast.show();
+                } catch (Exception e) {
+                    Log.e("ERROR:","Unabelt o receive");
+                }
+            }
+        };
+        registerReceiver(pushReceiver, intentFilter);
+        */
+
+        //try {
+
+            //object.put("title", "MyTitle");
+            /*
+            ParsePush pushMessageClient1 = new ParsePush();
+            pushMessageClient1.setMessage("TEXT");
+            pushMessageClient1.setChannel("MyChannel");
+            pushMessageClient1.sendInBackground(new SendCallback() {
+
+                public void done(com.parse.ParseException e) {
+                    if(e != null) {
+                        Log.e("ERROR:","SOMETHING WENT WRONG WITH THE SEND PUSH");
+                    }
+                }
+            });
+            */
+        //} catch (Exception e){
+            //e.printStackTrace();
+        //}
+
+        Button send_btn = (Button) findViewById(R.id.send_btn);
+        send_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v("SENT:","SENT NOTIF");
+                try{
+                    ParsePush push = new ParsePush();
+                    String message = "New Message";
+                    push.setChannel("ch1");
+                    push.setMessage(message);
+                    push.sendInBackground();
+                }catch(Exception e){
+                    Log.e("ERROR:","Unable to send push.");
+                }
+            }
+        });
+        Button receive_btn = (Button) findViewById(R.id.receive_btn);
+        receive_btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
         /* --- EDITED CODE ----- */
 
@@ -99,7 +189,7 @@ public class MainActivity extends Activity {
             Log.e("ERROR","UNABLE TO ADD");
         }
         */
-
+        /*
         ParseQuery<ParseObject> query = ParseQuery.getQuery("friends");
         query.whereEqualTo("objectId","Xkt5B3raHJ");
         query.findInBackground(new FindCallback<ParseObject>() {
@@ -116,6 +206,7 @@ public class MainActivity extends Activity {
                 }
             }
         });
+        */
 
 
         /* --- TILL HERE -- */
@@ -142,7 +233,9 @@ public class MainActivity extends Activity {
         }
 
     }
+    public void onPushOpen(){
 
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
