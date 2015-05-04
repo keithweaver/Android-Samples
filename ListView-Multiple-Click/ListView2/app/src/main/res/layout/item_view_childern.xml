@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/item_imageView"
+            android:background="@android:color/darker_gray"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/item_imageView_contentDescription"
+            />
+        <TextView
+            android:id="@+id/item_titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/item_imageView"
+            android:text="title text"
+            />
+        <TextView
+            android:id="@+id/item_descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/item_imageView"
+            android:layout_below="@id/item_titleTextView"
+            android:layout_marginTop="5dp"
+            android:text="description text"
+            />
+
+
+</merge>
