@@ -4,6 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+
+import java.util.List;
 
 
 public class MainActivity extends Activity {
@@ -12,6 +16,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ListView mListView = (ListView) findViewById(R.id.listview);
+        ListAdapter customAdapter = new ListAdapter(this, R.layout.row_template, List<Item>);
+        mListView.setAdapter(customAdapter);
+
+
     }
 
 
