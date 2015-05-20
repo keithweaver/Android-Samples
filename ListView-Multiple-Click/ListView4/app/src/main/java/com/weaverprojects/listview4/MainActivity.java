@@ -22,7 +22,7 @@ public class MainActivity extends Activity {
 
         //----
         ListView listview = (ListView) findViewById(R.id.listview);
-        String[] values = new String[]{"Ketih Weaver","Scott Weaver","Dana Weaver"};
+        String[] values = new String[]{"Ketih Weaver","Scott Weaver","Dana Weaver","Test 1", "Test 2", "Test 3", "Test 4", "Test 5", "Test 6", "Test 7", "Test 8", "Test 9", "Test 10", "Test 11"};
         final ArrayList<String> list = new ArrayList<String>();
         for(int i = 0;i < values.length;i++){
             list.add(values[i]);
