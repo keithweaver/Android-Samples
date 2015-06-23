@@ -42,6 +42,8 @@ public class MainActivity extends ActionBarActivity {
         ArrayList<NameValuePair> namesValuePairs = new ArrayList<>();
         namesValuePairs.add(new BasicNameValuePair("year","1994"));
 
+        Log.e("NUMBER OF NAMES:", String.valueOf(namesValuePairs.size()));
+
         //http post
         InputStream is;
         try{
@@ -57,6 +59,7 @@ public class MainActivity extends ActionBarActivity {
             StringBuilder sb = new StringBuilder();
             String line = null;
             while((line = reader.readLine()) != null){
+                Log.e("", line);
                 sb.append(line + "\n");
                 Log.e("","--- 001");
             }
