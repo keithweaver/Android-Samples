@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+apply plugin: 'robolectric'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':stripe')
+    compile 'com.android.support:support-v4:18.0.+'
+    androidTestCompile 'junit:junit:4.+'
+    androidTestCompile 'org.robolectric:robolectric:2.3+'
+}
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "19.1.0"
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+        androidTest {
+            setRoot('src/test')
+        }
+    }
+}
