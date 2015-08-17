@@ -1,0 +1,13 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+/app/src/main/java/com/mwongela/gcmdemo/enezatings
+/app/src/main/java/com/mwongela/gcmdemo/enezatings/ConnectionDetector.java
+/app/src/main/java/com/mwongela/gcmdemo/enezatings/ConnectionUtilities.java
+/app/src/main/java/com/mwongela/gcmdemo/JSONParser.java
+/app/src/main/java/com/mwongela/gcmdemo/MakeHttpRequest.java
+/app/src/main/java/com/mwongela/gcmdemo/TestActivity.java
