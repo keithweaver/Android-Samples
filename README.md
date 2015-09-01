@@ -10,3 +10,4 @@ Still need to add:
 - processing money
 - Animation
 - Parse.com Push Notification
+- NFC
