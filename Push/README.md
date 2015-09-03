@@ -48,3 +48,8 @@ Line 20 (Main_Link) add in your website/ip to point to the backend files.
 The project sends notifications to itself right now. To change who the notifications go to, open GCMExample/app/src/main/java/com/expeditionlabs/gcmexample/UI/SecondActivity.java
 
 On line 83: new SendMessageServerActivity(v.getContext()).execute(userName, msg); <--- Change userName to a different username and if they have a regid associated with their user name, they will receive the notification. 
+
+
+###Tags
+
+push notification example, android push notification example, android gcm example, android google cloud messaging, sending push notifications, how to send push notifications, push notification tutorial, android tutorial
