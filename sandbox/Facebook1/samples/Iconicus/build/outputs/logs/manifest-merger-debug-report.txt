@@ -1,0 +1,91 @@
+-- Merging decision tree log ---
+manifest
+ADDED from AndroidManifest.xml:22:1
+	package
+		ADDED from AndroidManifest.xml:23:5
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	xmlns:android
+		ADDED from AndroidManifest.xml:22:11
+uses-permission#android.permission.INTERNET
+ADDED from AndroidManifest.xml:25:5
+	android:name
+		ADDED from AndroidManifest.xml:25:22
+application
+ADDED from AndroidManifest.xml:27:5
+MERGED from com.facebook.android:facebook:4.6.0:28:5
+MERGED from com.android.support:support-v4:22.2.1:22:5
+	android:label
+		ADDED from AndroidManifest.xml:30:9
+	android:allowBackup
+		ADDED from AndroidManifest.xml:28:9
+	android:icon
+		ADDED from AndroidManifest.xml:29:9
+	android:theme
+		ADDED from AndroidManifest.xml:31:9
+activity#com.example.iconicus.MainActivity
+ADDED from AndroidManifest.xml:32:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:34:13
+	android:label
+		ADDED from AndroidManifest.xml:35:13
+	android:name
+		ADDED from AndroidManifest.xml:33:13
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:36:13
+action#android.intent.action.MAIN
+ADDED from AndroidManifest.xml:37:17
+	android:name
+		ADDED from AndroidManifest.xml:37:25
+category#android.intent.category.LAUNCHER
+ADDED from AndroidManifest.xml:39:17
+	android:name
+		ADDED from AndroidManifest.xml:39:27
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:41:13
+data
+ADDED from AndroidManifest.xml:42:17
+	android:path
+		ADDED from AndroidManifest.xml:45:21
+	android:host
+		ADDED from AndroidManifest.xml:44:21
+	android:scheme
+		ADDED from AndroidManifest.xml:43:21
+category#android.intent.category.DEFAULT
+ADDED from AndroidManifest.xml:46:17
+	android:name
+		ADDED from AndroidManifest.xml:46:27
+category#android.intent.category.BROWSABLE
+ADDED from AndroidManifest.xml:47:17
+	android:name
+		ADDED from AndroidManifest.xml:47:27
+action#android.intent.action.VIEW
+ADDED from AndroidManifest.xml:48:17
+	android:name
+		ADDED from AndroidManifest.xml:48:25
+activity#com.facebook.FacebookActivity
+ADDED from AndroidManifest.xml:58:9
+	android:label
+		ADDED from AndroidManifest.xml:62:13
+	android:configChanges
+		ADDED from AndroidManifest.xml:59:13
+	android:theme
+		ADDED from AndroidManifest.xml:61:13
+	android:name
+		ADDED from AndroidManifest.xml:58:19
+meta-data#com.facebook.sdk.ApplicationId
+ADDED from AndroidManifest.xml:64:9
+	android:value
+		ADDED from AndroidManifest.xml:66:13
+	android:name
+		ADDED from AndroidManifest.xml:65:13
+uses-sdk
+INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
+MERGED from com.facebook.android:facebook:4.6.0:24:5
+MERGED from com.android.support:support-v4:22.2.1:20:5
+	android:targetSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
+	android:minSdkVersion
+		INJECTED from AndroidManifest.xml:0:0
+		INJECTED from AndroidManifest.xml:0:0
