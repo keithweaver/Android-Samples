@@ -2,6 +2,7 @@ package com.weaverprojects.localstorageapp.View;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -18,5 +19,10 @@ public class MainActivity extends Activity {
         mLocalDB = new LocalDB(this, C.DB_NAME, null, 1);
 
         //perform actions on table
+        mLocalDB.insertRow("Test F1", "Test L1", "POSt 1");
+
+        for(String m : mLocalDB.getAllFullNames()){
+            Log.v("LocalDB_", m);
+        }
     }
 }

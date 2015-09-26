@@ -53,8 +53,8 @@ public class LocalDB extends SQLiteOpenHelper {
         res.moveToFirst();
         while(res.isAfterLast() == false){
             listOfNames.add(
-                    res.getColumnIndex(C.myTable.columns.FIRST_NAME) + " " +
-                            res.getColumnIndex(C.myTable.columns.LAST_NAME));
+                    res.getString(res.getColumnIndex(C.myTable.columns.FIRST_NAME)) + " " +
+                            res.getString(res.getColumnIndex(C.myTable.columns.LAST_NAME)));
             res.moveToNext();
         }
         return listOfNames;
