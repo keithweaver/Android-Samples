@@ -13,7 +13,7 @@ public class Application extends android.app.Application {
         Log.v("APP IS STARTING", "...");
         // Initialize the Parse SDK.
         try {
-            Parse.initialize(this, "x29Y0O6qp4RBjAExsvmYqjE8rFoW23l06EXgRCMm", "x0znRMyn9XimjPF4WGaoLmswxR77Hj3ugqFNSVPO");;
+            Parse.initialize(this, "YOUR_APPLICATION_ID", "YOUR_CLIENT_ID");;
         } catch (Exception e) {
 
         }
