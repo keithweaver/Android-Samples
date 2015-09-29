@@ -1,0 +1,59 @@
+<LinearLayout
+    tools:context=".PaymentActivity"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableRow android:layout_height="wrap_content" android:layout_width="fill_parent">
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:layout_weight="0.25"
+            android:id="@+id/card1"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:layout_weight="0.25"
+            android:id="@+id/card2"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:layout_weight="0.25"
+            android:id="@+id/card3"/>
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:layout_weight="0.25"
+            android:id="@+id/card4"/>
+    </TableRow>
+
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.7" android:hint="MM" android:id="@+id/month"/>
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.3" android:hint="YY" android:id="@+id/year"/>
+    </TableRow>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.7" android:hint="CVC" android:id="@+id/cvc"/>
+    </TableRow>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.7" android:hint="$$" android:id="@+id/dollar"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:text="."/>
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.3" android:hint="$$" android:id="@+id/cent"/>
+    </LinearLayout>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1" android:hint="User" android:id="@+id/user"/>
+    </TableRow>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" android:text="CAD" android:id="@+id/currency"/>
+    <TableRow android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <Button android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="Buy" android:id="@+id/buyBtn"/>
+    </TableRow>
+
+</LinearLayout>
