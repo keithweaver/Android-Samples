@@ -58,6 +58,7 @@ public class StripeManager {
             @Override
             public void success(Response response) {
                 Toast.makeText(context, "Payment complete", Toast.LENGTH_SHORT).show();
+                Log.v(TAG,"Success");
             }
 
             @Override

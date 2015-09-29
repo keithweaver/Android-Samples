@@ -11,10 +11,10 @@ import retrofit.http.POST;
  * Created by Keith on 2015-09-28.
  */
 public interface StripeRestAPI {
-    String ENDPOINT = "https://www.weaverstartup.com/";
+    String ENDPOINT = "https://www.weaverstartup.com/strip";
 
     @FormUrlEncoded
-    @POST("charge.php")
+    @POST("/charge.php")
     void postCharge(@Field("stripeToken") Token token,
                     @Field("amount") int amount,
                     @Field("currency") String currency,
