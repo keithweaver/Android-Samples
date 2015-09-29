@@ -63,6 +63,7 @@ public class StripeManager {
             @Override
             public void failure(RetrofitError error) {
                 Toast.makeText(context, "Payment error", Toast.LENGTH_SHORT).show();
+                Log.e(TAG, error.toString());
             }
         });
     }

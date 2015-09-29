@@ -22,7 +22,7 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':stripe')
-    compile 'com.android.support:support-v4:18.0.+'
+    //compile 'com.android.support:support-v4:18.0.+'
 
     compile 'com.google.code.gson:gson:2.3'
     compile 'org.parceler:parceler:0.2.13'
