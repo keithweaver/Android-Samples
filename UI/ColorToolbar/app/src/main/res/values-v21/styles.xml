@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+
+    </style>
+    <style name="MyActionBar" parent="android:Theme.Material.Light">
+        <item name="android:background"  tools:ignore="21">#BF360C</item>
+        <item name="background">@color/red</item>
+    </style>
+
+    <style name="CustomActionBarTheme" parent="android:Theme.Material.Light">
+        <item name="android:actionBarStyle"   tools:ignore="21">@style/MyActionBar</item>
+        <item name="actionBarStyle">@style/MyActionBar</item>
+
+    </style>
+</resources>
