@@ -23,7 +23,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         requestWindowFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_main);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayHomeAsUpEnabled(false);
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         actionBar = getActionBar();
