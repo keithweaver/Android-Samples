@@ -22,12 +22,18 @@ $(document).ready(function(){
 		$("#content-chat").show();
 		setTitle("Conversation UI");
 	});
+	$("#floating-btn").click(function(){
+		hideAllContent();
+		$("#content-floating").show();
+		setTitle("Floating action button");
+	})
 });
 function hideAllContent(){
 	$("#content-home").hide();
 	$("#content-tabs").hide();
 	$("#content-chat").hide();
 	$("#content-simple-listview").hide();
+	$("#content-floating").hide();
 }
 function setTitle(s){
 	//$("#title").val(s);
