@@ -1,10 +1,148 @@
 <html>
 <head>
+<title>Android Samples | Keith Weaver</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="./css/top.css"/> 
+<link rel="stylesheet" href="./css/bottom.css"/>
+<link rel="stylesheet" href="./css/menu.css"/>
+<link rel="stylesheet" href="./css/content.css"/>
+<link rel="stylesheet" href="./css/phone.css"/>
 
 </head>
 <body>
-Blank page for now
+<div id="topRow" class="top-bc">
+	<nav class="navbar navbar-fixed-top top-bc">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<h1>
+					<a class="navbar-brand" href="#" id="title">
+						Android Samples
+					</a>
+				</h1>
+			</div>
+			<!--
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+			-->
+			<!--
+			<ul class="nav navbar-nav navbar-right">
+			<li><a href="#">Link</a></li>
+			</ul>
+			-->
+			<!--
+			</div>
+			-->
+		</div><!-- /.container-fluid -->
+	</nav>
 
+	<div id="sub-title-wrapper">
+		<div class="container-fluid">
+			<h2>
+				<a href="https://github.com/kweaver00/Android-Samples" id="subTitle">
+					https://github.com/kweaver00/Android-Samples
+				</a>
+			</h2>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row" id="bottomRow">
+		<div class="col-sm-3">
+			<div class="panel panel-default">
+				
+				<a href="#" class="menu-item" id="home-btn"><p class="menu-wrapper">Home</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper">Basics</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Starting app</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Button click</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Multiple window app</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Multiple window passing info</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Get user phone number</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper">ListView</p></a>
+				<a href="#" class="menu-item" id="simple-listview-btn"><p class="menu-wrapper sub-menu-wrapper">Simple ListView</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Custom ListView</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper">UI</p></a>
+				<a href="#" class="menu-item" id="tabs-btn"><p class="menu-wrapper sub-menu-wrapper">Tabs Navigation</p></a>
+				<a href="#" class="menu-item" id="chat-btn"><p class="menu-wrapper sub-menu-wrapper">Coversation UI</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Pull to refresh</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper">Location</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">User Location</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Google Maps V2</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper">Storage</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Local Storage</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Parse.com</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper">Push Notification</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper">Images</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Local Image Selector</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Picasso Square Library (Load external images)</p></a>
+				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Load image with async task</p></a>
+
+			</div>
+		</div>
+		<div class="col-sm-9">
+			<div class="panel panel-default">
+				<div class="panel-body" id="content-home">
+					<p>Keith Weaver</p>
+					<p><a href="http://KeithWeaver.ca">keithweaver.ca</a></p>
+					<p>
+						Please star this repo, I like to know people are using it.<br/>
+						Tweet at me questions
+					</p>
+					<a class="twitter-timeline" href="https://twitter.com/search?q=to%3Akweaver0" data-widget-id="656632473837772800">Tweets about to:kweaver0</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+				<div class="panel-body" id="content-simple-listview">
+					<img src="https://raw.githubusercontent.com/kweaver00/Android-Samples/master/sandbox/imgs/Screenshot_2015-09-02-17-19-22.png" style="width:300px;">
+				</div>
+				<div class="panel-body" id="content-tabs">
+					<div class="text-center" style="width:100%;">
+						<div class="phone-wrapper">
+							<img src="./imgs/phone.png" class="phone-overlay">
+							<object class="phoneObj" >
+								<param name="movie" value="https://www.youtube.com/v/uBM7EYLpATg?version=3&feature=player_embedded&loop=1&playlist=,">
+								<param name="allowFullScreen" value="true">
+								<param name="allowScriptAccess" value="always">
+								<embed  id="" class="" src="https://www.youtube.com/v/uBM7EYLpATg?autoplay=1&controls=0&showinfo=0&version=3&feature=player_embedded&loop=1&playlist=," type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="260" height="430">
+							</object>
+						</div>
+					</div>
+
+
+					
+
+					<p class="content-text-1">Test</p>
+
+					<img src="https://raw.githubusercontent.com/kweaver00/Android-Samples/master/UI/imgs/tabnav.png" class="projectImg">
+
+
+					<p class="content-text-1">If you have questions tweet at @kweaver0 with the hash tags #android #tabs</p>
+
+					<a class="twitter-timeline" href="https://twitter.com/search?q=%23android%20%23tabs" data-widget-id="656638183334125568">Tweets about #android #tabs</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+				</div>
+				<div class="panel-body" id="content-chat">
+					<img src="https://raw.githubusercontent.com/kweaver00/Android-Samples/master/UI/imgs/chatui.png" class="projectImg">
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="./js/content.js"></script>
 </body>
 </html>

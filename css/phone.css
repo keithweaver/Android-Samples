@@ -1,0 +1,14 @@
+.phone-overlay{
+	height: 600px;
+	position: absolute
+}
+.phone-wrapper{
+	height: 600px;
+	margin-bottom: 20px;
+}
+.phoneObj{
+	height: 600px;
+	position: relative;
+	top: 90px;
+	left: 55px;
+}

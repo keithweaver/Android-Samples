@@ -1,0 +1,37 @@
+.menu-wrapper{
+	width: 100%;
+	border-color: #f1f1f1;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 1px;
+	text-align: left;
+	border-right-style: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.menu-wrapper:hover{
+	border-right-color: #298A08;
+	border-right-width: 3px;
+	border-bottom-style: solid;
+	background-color: #EFFBEF;
+	
+
+}
+.sub-menu-wrapper{
+	padding-left: 35px;
+	padding-right: 15px;
+}
+.menu-item{
+	color: #424242;
+	font-size: 16px;
+	text-decoration: none;
+	
+}
+.menu-item:hover{
+	color: #424242;
+	text-decoration: none;
+}
