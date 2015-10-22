@@ -22,6 +22,11 @@ $(document).ready(function(){
 		$("#content-chat").show();
 		setTitle("Conversation UI");
 	});
+	$("#pull-btn").click(function(){
+		hideAllContent();
+		$("#content-pull").show();
+		setTitle("Pull to refresh view");
+	});
 	$("#floating-btn").click(function(){
 		hideAllContent();
 		$("#content-floating").show();
@@ -33,6 +38,7 @@ function hideAllContent(){
 	$("#content-tabs").hide();
 	$("#content-chat").hide();
 	$("#content-simple-listview").hide();
+	$("#content-pull").hide();
 	$("#content-floating").hide();
 }
 function setTitle(s){
