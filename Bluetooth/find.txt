@@ -1,0 +1,157 @@
+public class MainActivity extends Activity {
+
+    public static BluetoothAdapter mBluetoothAdapter;
+
+    Context mContext;
+
+    int REQUEST_ENABLE_BT = 1;
+
+    ListView listView;
+
+    ArrayAdapter mArrayAdapter;
+
+    String BT_TITLE = "Nearby devices:";
+
+    public static String address = "";
+
+    public static String MY_PIN = "WEAVER";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        //---PIN STUFF
+        int mode = Activity.MODE_PRIVATE;
+        SharedPreferences pinSharedPreferences;
+        pinSharedPreferences=getSharedPreferences("pin_u_t_l", mode);
+        if(pinSharedPreferences.getInt("pin_pin",-1) == -1){
+            Random r = new Random();
+            int i1 = r.nextInt(8000 - 65) + 65;
+            MY_PIN += String.valueOf(i1);
+            SharedPreferences.Editor editor = pinSharedPreferences.edit();
+            editor.putInt("pin_pin", i1);
+        }else{
+            int pinNum = pinSharedPreferences.getInt("pin_pin",-1);
+            MY_PIN += String.valueOf(pinNum);
+        }
+
+
+        mContext = this.getApplicationContext();
+        //------------------------
+        //--- BLUETOOTH SET UP
+
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        if(mBluetoothAdapter == null){
+            Toast.makeText(mContext, "Bt not supported", Toast.LENGTH_SHORT).show();
+        }else{
+
+            //TURN ON BLUETOOTH
+            if(!mBluetoothAdapter.isEnabled()){
+                Intent turnOnIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                startActivityForResult(turnOnIntent, REQUEST_ENABLE_BT);
+            }else{
+                Toast.makeText(mContext, "Bluetooth is already on", Toast.LENGTH_SHORT).show();
+            }
+
+
+            listView = (ListView) findViewById(R.id.listView);
+            ArrayList<String> values = new ArrayList<String>();
+            //values.add("test");
+            mArrayAdapter = new ArrayAdapter<String>(this, R.layout.btdevice_row, R.id.text1, values);
+            listView.setAdapter(mArrayAdapter);
+
+            mArrayAdapter.add(BT_TITLE);
+
+            mBluetoothAdapter.startDiscovery();
+
+            IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+            registerReceiver(mPairReceiver, filter); // Don't forget to unregister during onDestroy
+
+            Intent discoverableIntent = new
+                    Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
+            discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
+            startActivity(discoverableIntent);
+
+            Set<BluetoothDevice> pairedDevices = mBluetoothAdapter.getBondedDevices();
+            if (pairedDevices.size() > 0) {
+
+                Intent openSendWindow = new Intent("android.intent.action.SendActivity");
+                startActivity(openSendWindow);
+            }
+
+
+        }
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                mBluetoothAdapter.cancelDiscovery();
+                String itemValue = (String) listView.getItemAtPosition(position);
+                Log.v("LISTVIEW ITEM:", itemValue);
+                address = itemValue.substring(itemValue.length() - 17);
+                // Create the result Intent and include the MAC address
+                pairTo();
+            }
+        });
+
+    }
+    private final BroadcastReceiver mPairReceiver = new BroadcastReceiver() {
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+
+            if (BluetoothDevice.ACTION_BOND_STATE_CHANGED.equals(action)) {
+                final int state        = intent.getIntExtra(BluetoothDevice.EXTRA_BOND_STATE, BluetoothDevice.ERROR);
+                final int prevState    = intent.getIntExtra(BluetoothDevice.EXTRA_PREVIOUS_BOND_STATE, BluetoothDevice.ERROR);
+
+                if (state == BluetoothDevice.BOND_BONDED && prevState == BluetoothDevice.BOND_BONDING) {
+                    Toast.makeText(mContext, "Paired", Toast.LENGTH_LONG).show();
+                } else if (state == BluetoothDevice.BOND_NONE && prevState == BluetoothDevice.BOND_BONDED){
+                    Toast.makeText(mContext, "Unpaired", Toast.LENGTH_LONG).show();
+                }
+
+            }
+            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                // Add the name and address to an array adapter to show in a ListView
+                mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+                //mark(6);
+                mArrayAdapter.notifyDataSetChanged();
+
+            }
+        }
+    };
+
+    protected void pairTo(){
+        final BluetoothManager bluetoothManager =
+                (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+        mBluetoothAdapter = bluetoothManager.getAdapter();
+
+        BluetoothDevice device = mBluetoothAdapter.getRemoteDevice(address);
+
+        pairDevice(device);
+
+        IntentFilter intent = new IntentFilter(BluetoothDevice.ACTION_BOND_STATE_CHANGED);
+        registerReceiver(mPairReceiver, intent);
+    }
+    private void pairDevice(BluetoothDevice device) {
+        try {
+            Method method = device.getClass().getMethod("createBond", (Class[]) null);
+            method.invoke(device, (Object[]) null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void unpairDevice(BluetoothDevice device) {
+        try {
+            Method method = device.getClass().getMethod("removeBond", (Class[]) null);
+            method.invoke(device, (Object[]) null);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    }
