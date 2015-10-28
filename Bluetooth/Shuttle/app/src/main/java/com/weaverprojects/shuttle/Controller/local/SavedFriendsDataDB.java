@@ -21,7 +21,7 @@ public class SavedFriendsDataDB extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + C.local.saved_friends_data.TABLE_NAME +
-                "(" +
+                " (" +
                 C.local.saved_friends_data.KEY + " integer primary key, " +
                 C.local.saved_friends_data.USER_NAME + " text, " +
                 C.local.saved_friends_data.NAME + " text" +

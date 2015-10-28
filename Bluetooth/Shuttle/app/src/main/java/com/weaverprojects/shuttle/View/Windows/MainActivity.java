@@ -32,6 +32,8 @@ public class MainActivity extends Activity {
     ListView listView;
     ImageView addBtn;
 
+    String userName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,11 +41,14 @@ public class MainActivity extends Activity {
 
         declareUI();
 
+        getCurrentUserInfo();
+
         mOnGoingChatsDB = new OnGoingChatsDB(this, C.local.DB_NAME, null, 1);
         mSavedFriendsDataDB = new SavedFriendsDataDB(this, C.local.DB_NAME, null, 1);
         mConvoList = mOnGoingChatsDB.getAllConvos();
         Log.v(TAG, "Convos:" + String.valueOf(mConvoList.size()));
-        mConvoListAdapter = new ConvoListAdapter(this, R.layout.single_past_user, mConvoList);
+        mConvoListAdapter = new ConvoListAdapter(this, R.layout.single_past_user, mConvoList,
+                userName);
         listView.setAdapter(mConvoListAdapter);
 
 

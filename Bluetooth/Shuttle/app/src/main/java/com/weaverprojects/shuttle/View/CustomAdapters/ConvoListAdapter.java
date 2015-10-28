@@ -2,6 +2,7 @@ package com.weaverprojects.shuttle.View.CustomAdapters;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.weaverprojects.shuttle.Controller.C;
 import com.weaverprojects.shuttle.Controller.local.SavedFriendsDataDB;
 import com.weaverprojects.shuttle.Model.ConvoListItem;
 import com.weaverprojects.shuttle.R;
+import com.weaverprojects.shuttle.View.Windows.ChatActivity;
 
 import java.util.ArrayList;
 
@@ -26,14 +28,17 @@ public class ConvoListAdapter extends ArrayAdapter<ConvoListItem> {
     Context context;
     int layoutResourceId;
     ArrayList<ConvoListItem> data = new ArrayList<ConvoListItem>();
+    String userName;
 
     SavedFriendsDataDB mSavedFriendsDataDB;
 
-    public ConvoListAdapter(Context context, int layoutResourceId, ArrayList<ConvoListItem> data) {
+    public ConvoListAdapter(Context context, int layoutResourceId, ArrayList<ConvoListItem> data,
+                            String u) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
         this.data = data;
+        this.userName = u;
 
         mSavedFriendsDataDB = new SavedFriendsDataDB(context, C.local.DB_NAME, null, 1);
     }
@@ -72,6 +77,9 @@ public class ConvoListAdapter extends ArrayAdapter<ConvoListItem> {
             public void onClick(View v) {
                 Log.v("BTN2 WAS CLICKED", "" + position);
                 //Toast.makeText(context, "Btn2 Clicked", Toast.LENGTH_SHORT).show();
+                Intent openChatWindow = new Intent(v.getContext(), ChatActivity.class);
+                openChatWindow.putExtra(C.extras.CURRENT_USER, userName);
+                context.startActivity(openChatWindow);
             }
         });
 
