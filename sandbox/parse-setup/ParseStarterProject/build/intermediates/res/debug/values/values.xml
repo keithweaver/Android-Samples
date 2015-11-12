@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- From: file:/Users/Weaver/Desktop/my.android/github/android-learning/parse-setup/ParseStarterProject/res/values/strings.xml -->
-    <eat-comment/>
-    <string name="app_name">ParseStarterProject</string>
-    <string name="hello">Hello World, ParseStarterProjectActivity!</string>
-</resources>

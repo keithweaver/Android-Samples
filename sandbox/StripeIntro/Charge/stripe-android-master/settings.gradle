@@ -1,2 +1,0 @@
-include ':stripe'
-include ':example'
