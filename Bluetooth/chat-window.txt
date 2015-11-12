@@ -1,0 +1,191 @@
+public class SendActivity extends Activity {
+    public String TAG = "";
+    TextView statusLabel;
+
+    boolean backpacker = false;
+
+    Context mContext;
+
+    private BluetoothChatService mChatService = null;
+
+    EditText messageTextbox = null;
+
+    private StringBuffer mOutStringBuffer;
+
+    private OutputStream outputStream;
+    private InputStream inStream;
+
+
+    ArrayList<String> hiddenMessages;
+    ArrayAdapter<String> hiddenMessagesAdapter;
+    ListView hiddenMessagesListView;
+
+    String HIDDEN_MESSAGE_TITLE = "HIDDEN MESSAGES:";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_send);//this makes it show the xml file.
+
+        mContext = this.getApplicationContext();
+
+
+
+        statusLabel = (TextView) findViewById(R.id.statusLabel);
+
+        hiddenMessages = new ArrayList<String>();
+
+        int mode = Activity.MODE_PRIVATE;
+        SharedPreferences pinSharedPreferences;
+        pinSharedPreferences=getSharedPreferences("pin_u_t_l", mode);
+        int numberOfMessagesStored = pinSharedPreferences.getInt("pin_message_total", -1);
+        if(numberOfMessagesStored > 0){
+            for(int i = 1;i <= numberOfMessagesStored;i++){
+                String stringKey = "pin_message_" + i;
+                String storedMessage = pinSharedPreferences.getString(stringKey, "");
+                hiddenMessages.add(storedMessage);
+            }
+        }
+
+        hiddenMessagesAdapter = new ArrayAdapter<String>(this, R.layout.btdevice_row, R.id.text1, hiddenMessages);
+        hiddenMessagesListView = (ListView) findViewById(R.id.hiddenMessagesListView);
+        hiddenMessagesListView.setAdapter(hiddenMessagesAdapter);
+
+        hiddenMessagesAdapter.add(HIDDEN_MESSAGE_TITLE);
+        hiddenMessagesAdapter.notifyDataSetChanged();
+
+        if(!isNetworkAvailable()){
+
+                statusLabel.setText("The message is going to send with backpacker");
+                backpacker = true;
+                mChatService = new BluetoothChatService(mContext, mHandler);
+            for (BluetoothDevice device : MainActivity.mBluetoothAdapter.getBondedDevices()) {
+                    mChatService.connect(device, false);
+                }
+        } else {
+            statusLabel.setText("Sending over the network");
+            //SEND ALL MESSAGES THAT ARE IN BACKGROUND IF CONNECTED
+            if(hiddenMessages.size() > 0){
+                Toast.makeText(mContext, "Sending hidden messages", Toast.LENGTH_SHORT).show();
+                //connect to parse.com
+                int i=0;
+                for(String message : hiddenMessages){
+                    if(message.equals(HIDDEN_MESSAGE_TITLE)) {
+                        int positionOfBreak = 0;
+                        for (int j = 0; j < message.length() - 1; j++) {
+                            if (message.substring(0, 1).equals("|")) {
+                                positionOfBreak = j;
+                            }
+                        }
+                        String pin = message.substring(0, positionOfBreak);
+                        String newMessage = message.substring(positionOfBreak + 1, message.length());
+                        addMessageToParse(pin, newMessage);
+                        hiddenMessages.remove(i);
+                    }
+                    i++;
+                }
+            }
+        }
+
+        Button sendButton = (Button) findViewById(R.id.sendBtn);
+        messageTextbox = (EditText) findViewById(R.id.messageTextbox);
+
+
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String message = messageTextbox.getText().toString();
+                //statusLabel.setText(message);
+                if (backpacker == true) {
+                    //send via bluetooth to paired devices
+
+                    try {
+                        sendMessage(message);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    //statusLabel.setText(statusLabel.getText().toString() + "4");
+                } else {
+                    //send over parse.com
+                    addMessageToParse(MainActivity.MY_PIN , message);
+
+                }
+                messageTextbox.setText("");
+            }
+        });
+
+
+
+
+    }
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+    protected void sendMessage(String s) throws IOException {
+        //outputStream.write(s.getBytes());
+        if(s.length() != 0) {
+            String temp =  MainActivity.MY_PIN + "|" + s;
+            hiddenMessagesAdapter.add(temp);
+            hiddenMessagesAdapter.notifyDataSetChanged();
+            mChatService.write(temp.getBytes());
+            messageTextbox.setText("");
+            Toast.makeText(mContext, "Message sent!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+    private final Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            //FragmentActivity activity = getActivity();
+            switch (msg.what) {
+                case Constants.MESSAGE_STATE_CHANGE:
+                    switch (msg.arg1) {
+                        case BluetoothChatService.STATE_CONNECTED:
+                            Toast.makeText(mContext, "Connected(1)", Toast.LENGTH_SHORT).show();
+                            break;
+                        case BluetoothChatService.STATE_CONNECTING:
+                            //setStatus(R.string.title_connecting);
+                            Toast.makeText(mContext, "Connecting(1)", Toast.LENGTH_SHORT).show();
+                            break;
+                        case BluetoothChatService.STATE_LISTEN:
+                        case BluetoothChatService.STATE_NONE:
+                            Toast.makeText(mContext, "Not Con(1)", Toast.LENGTH_SHORT).show();
+                            break;
+                    }
+                    break;
+                case Constants.MESSAGE_WRITE:
+                    byte[] writeBuf = (byte[]) msg.obj;
+                    // construct a string from the buffer
+                    String writeMessage = new String(writeBuf);
+                    //mConversationArrayAdapter.add("Me:  " + writeMessage);
+                    break;
+                case Constants.MESSAGE_READ:
+                    byte[] readBuf = (byte[]) msg.obj;
+                    // construct a string from the valid bytes in the buffer
+                    String readMessage = new String(readBuf, 0, msg.arg1);
+                    Toast.makeText(mContext, "NEW:" + readMessage, Toast.LENGTH_LONG).show();
+                    if(!readMessage.equals("")){
+                        hiddenMessagesAdapter.add(readMessage);
+                    }
+                    //mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
+                    break;
+                case Constants.MESSAGE_DEVICE_NAME:
+                    // save the connected device's name
+                    //mConnectedDeviceName = msg.getData().getString(Constants.DEVICE_NAME);
+                    if (null != mContext) {
+                        Toast.makeText(mContext, "Connected to "
+                                + MainActivity.address, Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case Constants.MESSAGE_TOAST:
+                    if (null != mContext) {
+                        Toast.makeText(mContext, msg.getData().getString(Constants.TOAST),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+            }
+        }
+    };
