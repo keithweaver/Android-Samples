@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Always Running Location</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_service_desc">About the service</string>
+    <string name="my_infinite_service">Service name</string>
+</resources>
