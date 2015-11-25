@@ -47,6 +47,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         declareUIObjects();
+
         handlePermissions();
     }
 
@@ -81,9 +82,12 @@ public class MainActivity extends Activity {
 
     protected void handlePermissions() {
         if (Build.VERSION.SDK_INT >= 23) {
+            Log.v("WEAVER_", "higher than 23");
             int hasWriteContactsPermission = checkSelfPermission(Manifest.permission.CAMERA);
-            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(new String[]{Manifest.permission.CAMERA},
+            int hasStoragePermission = checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+            if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED && hasStoragePermission != PackageManager.PERMISSION_GRANTED) {
+                Log.v("WEAVER_", "Does not have permission");
+                requestPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                         REQUEST_CODE_ASK_PERMISSIONS);
                 return;
             }
