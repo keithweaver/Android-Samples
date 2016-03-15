@@ -1,0 +1,14 @@
+.code-block{
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-color: #f1f1f1;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: 2px;
+}
+.code{
+	background-color: white;
+}

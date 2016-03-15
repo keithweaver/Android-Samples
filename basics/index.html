@@ -3,7 +3,7 @@
 
 <meta charset="UTF-8">
 <meta name="description" content="A list of free Android tutorials from around the area organized by creator and date.">
-<meta name="keywords" content="Android Samples, Android Tutorails, Getting started with Android, Android coding, building Android apps, how to build android apps">
+<meta name="keywords" content="Android Samples, Android Tutorials, Getting started with Android, Android coding, building Android apps, how to build android apps, Understanding android basics, intro to android">
 <meta name="author" content="Hege Refsnes">
 
 <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
@@ -12,8 +12,9 @@
 
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/tutorials.css"/>
+<link rel="stylesheet" href="../css/code.css"/>
 
-<title>Android Tutorials</title>
+<title>Android Basics</title>
 
 </head>
 <body>
@@ -21,7 +22,7 @@
 	<div class="container-fluid">
 		<div class="row top-row">
 			<div class="col-sm-12">
-				<h1 class="main-title">Android Tutorials</h1>
+				<h1 class="main-title">Android Basics</h1>
 			</div>
 		</div>
 	</div>
@@ -32,11 +33,110 @@
 	<div class="row content-row">
 		<div class="col-sm-10 custom-panel-wrapper">
 			<div class="custom-panel">
-				<h2 class="sub-title">Testing for Android</h2>
+				<h2 class="sub-title">Welcome to the Basics for Android</h2>
 				<p class="common-text">Please go star the repo <a href="https://github.com/kweaver00/Android-Samples">https://github.com/kweaver00/Android-Samples</a></p>
-				<p class="common-text">Have a new one? Either fork the repo and make a pull request or email me at keith.weaver@queensu.ca</p>
-				<br/>
+				<p class="common-text">Find a spelling mistake or anything, <a href="https://github.com/kweaver00/Android-Samples/issues">file a bug</a> with the page url, description and correction if you know it.</p>
+				<p class="common-text">Created: March 15, 2016. Last updated: March 15, 2016</p>
 				
+				<br/>
+				<h2 class="sub-title">Getting started</h2>
+				<p class="common-text">I have an actual <a href="../introduction.html">introduction tutorial</a> but if you want to just dive right into it look below.</p>
+				<br/>
+				<h2 class="sub-title">Single window</h2>
+				<p class="common-text">
+					This would be a very simple window, often Android Studio starts off with this window:
+				</p>
+				<p>Insert image</p>
+				<p class="common-text">In the actual coding side of the application there is a Activity file, a layout (XML) file and you are declaring it in your Android Manifest</p>
+				<div class="code-block">
+					<code class="code">public class MainActivity extends Activity {</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+
+					<code class="code">}</code>
+
+
+				</div>
+				<br/>
+				<div class="code-block">
+					<code class="code">xml exmaple</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+
+					<code class="code">}</code>
+
+
+				</div>
+				<br/>
+				<div class="code-block">
+					<code class="code">Snippet from Android Manifest</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+
+					<code class="code">}</code>
+
+
+				</div>
+				<br/>
+				<p class="common-text">Here is the source code: <a href="https://github.com/kweaver00/Android-Samples/tree/master/Basics/Starting%20App">https://github.com/kweaver00/Android-Samples/tree/master/Basics/Starting%20App</a></p>
+				<p class="common-text">Here is a youtube tutorial, doing something very similar: <a href="https://www.youtube.com/watch?v=iKRCSUOHEAQ">Hello World! First app!</a></p>
+				<br/>
+				<h2 class="sub-title">Adding a second window</h2>
+				<br/>
+				<h2 class="sub-title">Passing extras between windows</h2>
+				<br/>
+				<h2 class="sub-title">Toast</h2>
+				<p class="common-text">What the heck is a toast? What a stupid name? They are the "popups" messages, below is photo:</p>
+				<p>Insert photo of toast</p>
+				<p class="common-text">They are commonly used if you do not want to actual add a label. Example: Network error connection, you need to inform the user that they are having a network error but it may not be common. So you do not add a label but put in a Toast. Code looks like:
+				</p>
+				<div class="code-block">
+					<code class="code">Toast.makeText(MainActivity.this, "Example Toast", Toast.LENGTH_SHORT).show();</code><br/>
+				</div>
+				<p class="common-text">The <code>MainActivity.this</code> is the context, this may change to be <code>view.getContext();</code> if you are using in a button for example. Cannot see the toast message? Did you forget the <code>.show();</code> on the end? Very common mistake, wont throw an error, just will not show it.</p>
+				<br/>
+				<p class="common-text">Here is a youtube tutorial, doing something very similar: <a href="https://www.youtube.com/watch?v=_P8z08Wxq4c">Toast messages</a></p>
+				
+				<br/>
+				<h2 class="sub-title">Logging</h2>
+				<p class="common-text">Logging is used for debugging usually. It allows you to write messages to the console. If you come from a pure Java background it is like <code>System.out.println("Test");</code> but now it's <code>Log.v(TAG, "Test");</code>. What is the <code>TAG</code>? This is used usually to track where you are and it prints <code>THE_TAG_MESSAGE > Test</code>.</p>
+				<div class="code-block">
+					<code class="code">public class MainActivity extends Activity {</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;public static final String TAG = "MainActivity_";</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log.v(TAG, "OnCreate was called");</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">}</code>
+
+
+				</div>
+				<br/>
+				<p class="common-text">Here is a youtube tutorial, doing something very similar: <a href="https://www.youtube.com/watch?v=UySxoVpa7I4">Logging</a></p>
+				
+				<br/>
+				<h2 class="sub-title">Snackbar</h2>
+				<p class="common-text">Snackbar acts very similar to a toast but looks like this:</p>
+				<div class="code-block">
+					<code class="code">public class MainActivity extends Activity {</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;public static final String TAG = "MainActivity_";</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log.v(TAG, "OnCreate was called");</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">}</code>
+
+
+				</div>
+				
+				<br/>
 			</div>
 		</div>
 		<div class="col-sm-2 custom-panel-wrapper">
