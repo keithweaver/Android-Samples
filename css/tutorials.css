@@ -1,0 +1,19 @@
+.tutorial-name-text{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+}
+.tutorial-creator-date-text{
+	font-size: 12px;
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+	top: -10px;
+	padding-bottom: 5px;
+}
+.tutorial-link{
+	color: #2e2e2e;
+}
+.tutorial-link:hover{
+	color: #2e2e2e;
+}

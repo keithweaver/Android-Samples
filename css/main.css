@@ -1,0 +1,60 @@
+body{
+	background-color: #f1f1f1;
+}
+.top-wrapper{
+	background-color: #00a1de;
+	width: 100%;
+}
+.top-row{
+	padding-top: 100px;
+	padding-bottom: 15px;
+}
+.content-row{
+	margin-top: 20px;
+	
+	padding-bottom: 100px;
+}
+.custom-panel-wrapper{
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.custom-panel{
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	padding-left: 10px;
+	padding-right: 10px;
+	box-shadow: 2px 2px 2px #D8D8D8;
+	
+}
+.green-dot{
+	font-size: 42px;
+	color: #81bc00;
+}
+.main-title{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 42px;
+	color: #585858;
+}
+.sub-title{
+	font-family: 'Fjalla One', sans-serif;
+	font-size: 24px;
+	color: #585858;
+}
+.common-text{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	color: #2e2e2e;
+}
+.code-block{
+	background-color: white;
+	color: #2e2e2e;
+}
+.code-block-wrapper{
+	background-color: white;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10x;
+	padding-left: 10px;
+	padding-right: 10px;
+}

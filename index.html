@@ -1,178 +1,79 @@
 <html>
 <head>
-<title>Android Samples | Keith Weaver</title>
+<link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="./css/main.css"/>
 
-<link rel="stylesheet" href="./css/top.css"/> 
-<link rel="stylesheet" href="./css/bottom.css"/>
-<link rel="stylesheet" href="./css/menu.css"/>
-<link rel="stylesheet" href="./css/content.css"/>
-<link rel="stylesheet" href="./css/phone.css"/>
+<title>Android Samples</title>
 
 </head>
 <body>
-<div id="topRow" class="top-bc">
-	<nav class="navbar navbar-fixed-top top-bc">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<h1>
-					<a class="navbar-brand" href="#" id="title">
-						Android Samples
-					</a>
-				</h1>
+<div class="top-wrapper">
+	<div class="container-fluid">
+		<div class="row top-row">
+			<div class="col-sm-12">
+				<h1 class="main-title">Android Samples</h1>
 			</div>
-			<!--
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
-			-->
-			<!--
-			<ul class="nav navbar-nav navbar-right">
-			<li><a href="#">Link</a></li>
-			</ul>
-			-->
-			<!--
-			</div>
-			-->
-		</div><!-- /.container-fluid -->
-	</nav>
-
-	<div id="sub-title-wrapper">
-		<div class="container-fluid">
-			<h2>
-				<a href="https://github.com/kweaver00/Android-Samples" id="subTitle">
-					https://github.com/kweaver00/Android-Samples
-				</a>
-			</h2>
 		</div>
 	</div>
 </div>
+
 
 <div class="container-fluid">
-	<div class="row" id="bottomRow">
-		<div class="col-sm-3">
-			<div class="panel panel-default">
-				
-				<a href="#" class="menu-item" id="home-btn"><p class="menu-wrapper">Home</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper">Basics</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Starting app</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Button click</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Multiple window app</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Multiple window passing info</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Get user phone number</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper">ListView</p></a>
-				<a href="#" class="menu-item" id="simple-listview-btn"><p class="menu-wrapper sub-menu-wrapper">Simple ListView</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Custom ListView</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper">UI</p></a>
-				<a href="#" class="menu-item" id="tabs-btn"><p class="menu-wrapper sub-menu-wrapper">Tabs Navigation</p></a>
-				<a href="#" class="menu-item" id="chat-btn"><p class="menu-wrapper sub-menu-wrapper">Coversation UI</p></a>
-				<a href="#" class="menu-item" id="pull-btn"><p class="menu-wrapper sub-menu-wrapper">Pull to refresh</p></a>
-				<a href="#" class="menu-item" id="floating-btn"><p class="menu-wrapper sub-menu-wrapper">Floating action button</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper">Location</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">User Location</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Google Maps V2</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper">Storage</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Local Storage</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Parse.com</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper">Push Notification</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper">Images</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Local Image Selector</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Picasso Square Library (Load external images)</p></a>
-				<a href="#" class="menu-item"><p class="menu-wrapper sub-menu-wrapper">Load image with async task</p></a>
-
+	<div class="row content-row">
+		<div class="col-sm-10 custom-panel-wrapper">
+			<div class="custom-panel">
+				<h2 class="sub-title">Welcome to Android Samples!</h2>
+				<p class="common-text"><a href="./android-tutorials.html">Looking for a list of tutorials around the internet?</a></p>
+				<p class="common-text"><a href="https://github.com/kweaver00/Android-Samples">https://github.com/kweaver00/Android-Samples</a></p>
+				<p class="common-text">Just not complete yet. Coming up next is updates and explanations on Github pages</p>
+				<br/>
+				<h2 class="sub-title">Completed examples in differnt areas</h2>
+				<p class="common-text">Basics: Example of first app, multiple window app</p>
+				<p class="common-text">Bluetooth: Nothing complete yet</p>
+				<p class="common-text">Camera: Example of Basic image, and camera image in HD</p>
+				<p class="common-text">ListView: Example of simple list view and custom listview</p>
+				<p class="common-text">Location: Examples of gps coordinates (w Android M) in activity and unbound service, and Google MapsV2</p>
+				<p class="common-text">Storage: Examples of Parse.com, SQLite (Local Storage)</p>
+				<p class="common-text">UI: Example of chat window, pull to refresh, tab navigation 1, floating action button</p>
+				<br/>
+				<h2 class="sub-title">Upcoming examples (that I have done but I have to clean up)</h2>
+				<p class="common-text">Basics: Using the toolbar</p>
+				<p class="common-text">Bluetooth: bluetooth basics, bluetooth chat</p>
+				<p class="common-text">Camera: Nothing</p>
+				<p class="common-text">ListView: Recycler view</p>
+				<p class="common-text">Location: Nothing</p>
+				<p class="common-text">Storage: Async, Retrofit</p>
+				<p class="common-text">UI: New tabs navigation, Sticky header</p>
+				<p class="common-text">API: Facebook Login, Stripe</p>
+				<p class="common-text">Images: Picasso, Async</p>
+				<p class="common-text">Google Cloud Messaging: Setting up, Notification Analytics, Global Dismal</p>
+				<br/>
+				<h2 class="sub-title">Future examples</h2>
+				<p class="common-text">Basics: Nothing</p>
+				<p class="common-text">Bluetooth: Nothing</p>
+				<p class="common-text">Camera: Nothing</p>
+				<p class="common-text">ListView: Nothing</p>
+				<p class="common-text">Location: Nothing</p>
+				<p class="common-text">Storage: Image upload using Retorfit</p>
+				<p class="common-text">UI: Nothing</p>
+				<p class="common-text">API: Uber Request API</p>
+				<p class="common-text">Images: Nothing</p>
+				<p class="common-text">Google Cloud Messaging: Nothing</p>
+				<p class="common-text">Animations: Nothing</p>
 			</div>
 		</div>
-		<div class="col-sm-9">
-			<div class="panel panel-default">
-				<div class="panel-body" id="content-home">
-					<p>Keith Weaver</p>
-					<p><a href="http://KeithWeaver.ca">keithweaver.ca</a></p>
-					<p>
-						Please star this repo, I like to know people are using it.<br/>
-						Tweet at me questions
-					</p>
-					<a class="twitter-timeline" href="https://twitter.com/search?q=to%3Akweaver0" data-widget-id="656632473837772800">Tweets about to:kweaver0</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-				</div>
-				<div class="panel-body" id="content-simple-listview">
-					<img src="https://raw.githubusercontent.com/kweaver00/Android-Samples/master/sandbox/imgs/Screenshot_2015-09-02-17-19-22.png" style="width:300px;">
-				</div>
-				<div class="panel-body" id="content-tabs">
-					<div class="text-center" style="width:100%;">
-						<div class="phone-wrapper">
-							<img src="./imgs/phone.png" class="phone-overlay">
-							<object class="phoneObj" >
-								<param name="movie" value="https://www.youtube.com/v/uBM7EYLpATg?version=3&feature=player_embedded&loop=1&playlist=,">
-								<param name="allowFullScreen" value="true">
-								<param name="allowScriptAccess" value="always">
-								<embed  id="" class="" src="https://www.youtube.com/v/uBM7EYLpATg?autoplay=1&controls=0&showinfo=0&version=3&feature=player_embedded&loop=1&playlist=," type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="260" height="430">
-							</object>
-						</div>
-					</div>
-
-
-					
-
-					<p class="content-text-1">Test</p>
-
-					<img src="https://raw.githubusercontent.com/kweaver00/Android-Samples/master/UI/imgs/tabnav.png" class="projectImg">
-
-
-					<p class="content-text-1">If you have questions tweet at @kweaver0 with the hash tags #android #tabs</p>
-
-					<a class="twitter-timeline" href="https://twitter.com/search?q=%23android%20%23tabs" data-widget-id="656638183334125568">Tweets about #android #tabs</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-				</div>
-				<div class="panel-body" id="content-chat">
-					<img src="https://raw.githubusercontent.com/kweaver00/Android-Samples/master/UI/imgs/chatui.png" class="projectImg">
-				</div>
-				<div class="panel-body" id="content-pull">
-
-					<div class="text-center" style="width:100%;">
-						<div class="phone-wrapper">
-							<img src="./imgs/phone.png" class="phone-overlay">
-							<object class="phoneObj" >
-								<param name="movie" value="https://www.youtube.com/v/f19g2MPJC54?version=3&feature=player_embedded&loop=1&playlist=,">
-								<param name="allowFullScreen" value="true">
-								<param name="allowScriptAccess" value="always">
-								<embed  id="" class="" src="https://www.youtube.com/v/f19g2MPJC54?autoplay=1&controls=0&showinfo=0&version=3&feature=player_embedded&loop=1&playlist=," type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="260" height="430">
-							</object>
-						</div>
-					</div>
-
-
-				</div>
-				<div class="panel-body" id="content-floating">
-
-					<div class="text-center" style="width:100%;">
-						<div class="phone-wrapper">
-							<img src="./imgs/phone.png" class="phone-overlay">
-							<object class="phoneObj" >
-								<param name="movie" value="https://www.youtube.com/v/2vMgxeW5844?version=3&feature=player_embedded&loop=1&playlist=,">
-								<param name="allowFullScreen" value="true">
-								<param name="allowScriptAccess" value="always">
-								<embed  id="" class="" src="https://www.youtube.com/v/2vMgxeW5844?autoplay=1&controls=0&showinfo=0&version=3&feature=player_embedded&loop=1&playlist=," type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="260" height="430">
-							</object>
-						</div>
-					</div>
-
-
-				</div>
+		<div class="col-sm-2 custom-panel-wrapper">
+			<div class="custom-panel">
+				<p class="common-text">On all other pages navigation goes here.</p>
 			</div>
 		</div>
 	</div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="./js/content.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </body>
 </html>
