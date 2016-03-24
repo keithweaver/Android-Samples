@@ -85,8 +85,64 @@
 				<p class="common-text">Here is a youtube tutorial, doing something very similar: <a href="https://www.youtube.com/watch?v=iKRCSUOHEAQ">Hello World! First app!</a></p>
 				<br/>
 				<h2 class="sub-title">Adding a second window</h2>
+				<p class="common-text">Why? Most apps are more than one window so in this second we are going to add a secondary window to the app we have above.</p>
+				<img src="../imgs/second-window-create.png" style="height:35px;">
+				<p class="common-text">Like in the image above, right click on the folder with your package name and select "New > Java Class". Name it whatever, typically describing the window, followed by "Activity". Example: <code>SecondActivity</code> or <code>LogInActivity</code>. This should be in the same folder as your <code>MainActivity.java</code> and Android Studio should generate another window similar to the <code>MainActivity.java</code>. Make sure you have a <code>onCreate</code> method in side your new java class.</p>
+				<p class="common-text">Now open your <code>AndroidManifest.xml</code> and add an activity tag referencing your activity below the existing one. Something like:</p>
+				<div class="code-block">
+					<code class="code">android manifest activity tags exmaple</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+
+					<code class="code">}</code>
+
+
+				</div>
+				<br/>
+				<p class="common-text">We now have two windows, but window one gets launched on start up and window two never gets called. Add a button to window one's xml file, and give an id like <code>mainBtn</code>. 
+				<div class="code-block">
+					<code class="code">Xml file with single btn = id is mainBtn</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+
+					<code class="code">}</code>
+				</div>
+				<br/>
+				<p class="common-text">We have to create an <a href="#">intent</a> to move between the two windows in java. Open window one's java file (Probably <code>MainActivity.java</code>). It would look somthing like:</p>
+				<div class="code-block">
+					<code class="code">Start activity call</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">}</code>
+				</div>
+				<br/>
+				<p class="common-text">Now click the play button at the top, and see it work!</p>
+				<br/>
+				<p class="common-text">Here is a youtube tutorial, doing something very similar: <a href="https://www.youtube.com/watch?v=ia-ok7ZR0yg">Multiple window app</a></p>
 				<br/>
 				<h2 class="sub-title">Passing extras between windows</h2>
+				<p class="common-text">It doesn't take much more to pass information between windows, we are going to use "extras". They use a KEY/VALUE storage, value stored has a key to access it. Change your intent call to look something like this: They use a KEY/VALUE storage, value stored has a key to access it.</p>
+				<div class="code-block">
+					<code class="code">Start activity storing an extracall</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">}</code>
+				</div>
+				<br/>
+				<p class="common-text">How to retreive the extra on window two:</p>
+				<div class="code-block">
+					<code class="code">Start activity getting an extracall</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">}</code>
+				</div>
+				<br/>
+				<p class="common-text">Here is a youtube tutorial, doing something very similar: <a href="https://www.youtube.com/watch?v=3WS7fT_CflM">Multiple window app with Extras</a></p>
 				<br/>
 				<h2 class="sub-title">Toast</h2>
 				<p class="common-text">What the heck is a toast? What a stupid name? They are the "popups" messages, below is photo:</p>
