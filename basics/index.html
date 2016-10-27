@@ -55,39 +55,93 @@
 				<br/>
 				<h2 class="sub-title">Single window</h2>
 				<p class="common-text">
-					This would be a very simple window, often Android Studio starts off with this window:
+					This would be a very simple window, often Android Studio starts off with this window (one of the two):
 				</p>
-				<p>Insert image</p>
-				<p class="common-text">In the actual coding side of the application there is a Activity file, a layout (XML) file and you are declaring it in your Android Manifest</p>
+				<div>
+					<img src="./imgs/newer-starting-window.png" style="max-width:250px;width:100%;display:inline-block;">
+					<img src="./imgs/starting-window.png" style="max-width:250px;width:100%;display:inline-block;">
+				</div>
+				<br/>
+				<p class="common-text">If you have the app on the left, you may want to <a href="./removing-additional-starting-xml-file.html" target="_blank">follow these steps too</a>.</p>
+
+				<p class="common-text">In the actual coding side of the application there is a Activity file, a layout (XML) file and you are declaring it in your Android Manifest. Your code may not be the exact same but it should be similar.</p>
 				<div class="code-block">
-					<code class="code">public class MainActivity extends Activity {</code><br/>
+					<code class="code">package YOUR_PACKAGE_NAME</code><br/>
+					<code class="code"></code><br/>
+					<!-- Imports -->
+					<code class="code">import android.os.Bundle;</code><br/>
+					<code class="code">import android.support.design.widget.FloatingActionButton;</code><br/>
+					<code class="code">import android.support.design.widget.Snackbar;</code><br/>
+					<code class="code">import android.support.v7.app.AppCompatActivity;</code><br/>
+					<code class="code">import android.support.v7.widget.Toolbar;</code><br/>
+					<code class="code">import android.view.View;</code><br/>
+					<code class="code">import android.view.Menu;</code><br/>
+					<code class="code">import android.view.MenuItem;</code><br/>
+					<code class="code"></code><br/>
+					
+					
+					<code class="code">public class MainActivity extends AppCompatActivity {</code><br/>
+
+					<!-- Class content -->
+					<code class="code"></code><br/>
 					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(Bundle savedInstanceState) {</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.activity_main);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setSupportActionBar(toolbar);</code><br/>
+					
+					<code class="code"></code><br/>
 					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
 
-					<code class="code">}</code>
+					<code class="code"></code><br/>
+					<code class="code">}</code><br/>
+					
+					
 
 
 				</div>
 				<br/>
 				<div class="code-block">
-					<code class="code">xml exmaple</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">&lt;RelativeLayout</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:android="http://schemas.android.com/apk/res/android"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools="http://schemas.android.com/tools"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="match_parent"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="match_parent"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;tools:context=".MainActivity"&gt;</code><br/>
+					<code class="code"></code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&lt;TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" /&gt;</code><br/>
+					<code class="code"></code><br/>
 
-					<code class="code">}</code>
+					<code class="code">&lt;/RelativeLayout&gt;</code>
 
 
 				</div>
 				<br/>
 				<div class="code-block">
-					<code class="code">Snippet from Android Manifest</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
-
-					<code class="code">}</code>
+					<code class="code">&lt;?xml version="1.0" encoding="utf-8"?&gt;</code><br/>
+					<code class="code">&lt;manifest</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:android="http://schemas.android.com/apk/res/android"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;package="YOUR_PACKAGE_NAME"&gt;</code><br/>
+					<code class="code"></code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&lt;application</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:allowBackup="true"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:icon="@mipmap/ic_launcher"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:label="@string/app_name"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:theme="@style/AppTheme" &gt;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;activity</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:name=".MainActivity"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:label="@string/app_name" &gt;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;intent-filter&gt;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;action android:name="android.intent.action.MAIN" /&gt;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;category android:name="android.intent.category.LAUNCHER" /&gt;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/intent-filter&gt;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/activity&gt;</code><br/>
+					<code class="code"></code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/application&gt;</code><br/>
+					<code class="code"></code><br/>
+					<code class="code">&lt;/manifest&gt;</code>
 
 
 				</div>

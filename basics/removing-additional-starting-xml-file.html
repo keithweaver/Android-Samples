@@ -1,0 +1,57 @@
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="description" content="A list of free Android tutorials from around the area organized by creator and date.">
+<meta name="keywords" content="Android Samples, Android Tutorials, Getting started with Android, Android coding, building Android apps, how to build android apps, Understanding android basics, intro to android">
+<meta name="author" content="Keith Weaver">
+
+<link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<link rel="stylesheet" href="../css/code.css"/>
+
+<title>Removing Additional Starting File | Android Samples</title>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-53605213-15', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+
+
+
+<div class="container-fluid">
+	<div class="row content-row">
+		<div class="col-sm-12">
+			<h1>Removing Additional Starting File</h1>
+			<p>
+				These are steps to remove content_main.xml if you have both content_main.xml and activity_main.xml.
+			</p>
+			<p>
+				Step 1:<br/>
+				In activity_main.xml, there is a line that pulls in other xml page. Remove that line:<br/>
+				<code>&lt;include layout="@layout/content_main" /&gt;</code>
+			</p>
+			<p>
+				Step 2:<br/>
+				Delete the content_main.xml file. You will lose the "Hello World" TextView. Readd it to activity_main.xml if you want.
+			</p>
+			
+		</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+</html>
