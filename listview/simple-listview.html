@@ -12,6 +12,7 @@
 
 <link rel="stylesheet" href="../css/main.css"/>
 <link rel="stylesheet" href="../css/tutorials.css"/>
+<link rel="stylesheet" href="../css/code.css"/>
 
 <title>Android Tutorials</title>
 
@@ -42,20 +43,81 @@
 				<h2 class="sub-title">Adding the UI</h2>
 				<p class="common-text">In your xml file add a listview object.</p>
 				<div class="code-block">
-					<code class="code">XML of listview {</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
-					<code class="code">}</code>
+					<code class="code">&lt;RelativeLayout</code><br/>
+    				<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:android="http://schemas.android.com/apk/res/android"</code><br/>
+    				<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;xmlns:tools="http://schemas.android.com/tools"</code><br/>
+    				<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="match_parent"</code><br/>
+    				<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="match_parent"</code><br/>
+    				<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;tools:context=".MainActivity"&gt;</code><br/>
+    				<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&lt;ListView</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_width="match_parent"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_height="match_parent"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:id="@+id/listView"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_alignParentTop="true"</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;android:layout_alignParentStart="true" /&gt;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;</code><br/>
+					<code class="code">&lt;/RelativeLayout&gt;</code>
 				</div>
 				<br/>
 				<h2 class="sub-title">Adding the rows</h2>
 				<p class="common-text">In your <code>onCreate</code> add rows, like:</p>
 				<div class="code-block">
-					<code class="code">Java example for adding rows to simple listview{</code><br/>
+					<code class="code">package YOUR_PACKAGE_NAME_CHANGE_THIS;</code><br/>
+					<code class="code"></code><br/>
+					<code class="code">import android.app.Activity;</code><br/>
+					<code class="code">import android.content.Context;</code><br/>
+					<code class="code">import android.support.v7.app.AppCompatActivity;</code><br/>
+					<code class="code">import android.os.Bundle;</code><br/>
+					<code class="code">import android.util.Log;</code><br/>
+					<code class="code">import android.view.Menu;</code><br/>
+					<code class="code">import android.view.MenuItem;</code><br/>
+					<code class="code">import android.view.View;</code><br/>
+					<code class="code">import android.widget.AdapterView;</code><br/>
+					<code class="code">import android.widget.ArrayAdapter;</code><br/>
+					<code class="code">import android.widget.ListView;</code><br/>
+					<code class="code">import android.widget.Toast;</code><br/>
+					<code class="code"></code><br/>
+					<code class="code">import java.util.ArrayList;</code><br/>
+					<code class="code">import java.util.List;</code><br/>
+					<code class="code"></code><br/>
+					<code class="code"></code><br/>
+					<code class="code">public class MainActivity extends Activity {</code><br/>
+					<code class="code"></code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;ArrayAdapter mArrayAdapter;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;ArrayList<String> listOfThings;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;ListView listView;</code><br/>
+					<code class="code"></code><br/>
 					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
-					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(S</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;protected void onCreate(Bundle savedInstanceState) {</code><br/>
+
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onCreate(savedInstanceState);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;setContentView(R.layout.activity_main);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listOfThings = new ArrayList&lt;&gt;();</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(int i = 0;i &lt; 25;i++){</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listOfThings.add("Item #" + String.valueOf(i));</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mArrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listOfThings);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listView = (ListView) findViewById(R.id.listView);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listView.setAdapter(mArrayAdapter);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@Override</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;public void onItemClick(AdapterView&lt;?&gt; parent, View view, int position, long id) {</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;String itemValue = (String) listView.getItemAtPosition(position);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Log.v("", "Item Value:" + itemValue);</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Toast.makeText(view.getContext(), "Item Value:" + itemValue, Toast.LENGTH_LONG).show();</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					
+
+
 					<code class="code">&nbsp;&nbsp;&nbsp;&nbsp;}</code><br/>
+					
+
 					<code class="code">}</code>
 				</div>
 				<br/>
