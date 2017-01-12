@@ -71,9 +71,85 @@
 			
 			<p class="page-sub-title">About Android</p>
 			<p class="content-text">Welcome to Android! It is a great mobile operating system and an enjoyable one to developed for. You will discover putting together a decent looking Android app is not hard to do, but getting it to Google Play is. There are a lot of little things to worry about.</p>
-
+			<br/>
 			<img src="http://kweaver00.github.io/Android-Samples/imgs/Android_lollipop.png" style="height:200px;">
-			
+			<br/>
+			<br/>
+			<p class="content-text">
+				- Founded in October 2003 by Andy Rubin, Rich Miner, Nick Sears, and Chris White<br/>
+				- Its open source<br/>
+				- Acquired by Google in 2005<br/>
+				- 82% of the smart phone users have Android Phones<br/>
+			</p>
+			<br/>
+			<img src="http://kweaver00.github.io/Android-Samples/imgs/stats.png" style="height:500px;">
+			<p class="content-text">
+				<a href="http://www.idc.com/prodserv/smartphone-os-market-share.jsp" target="_blank">http://www.idc.com/prodserv/smartphone-os-market-share.jsp</a>
+			</p>
+
+
+			<p class="page-sub-title">Getting started</p>
+			<p class="content-text">
+				Lets get started! Google is currently phasing out the Android Plugin for Eclipse so we are going to use Android Studio.<br/>
+				Here is the current stable version of Android Studio (2.2.2.0): <a href="https://developer.android.com/studio/index.html" target="_blank">https://developer.android.com/studio/index.html</a>
+			</p>
+			<p class="content-text">
+				If you run into any issues when installing Android Studio, please tell me by filing a bug. It has been a while since I've installed it.
+			</p>
+
+
+
+			<p class="page-sub-title">Activity, Service, Receiver</p>
+			<p class="content-text">
+				Android has three main file types: Activity, Service, and receivers.<br/>
+				<b style="text-decoration:underline;">Activity</b>: is UI based, "it is the java for the window". "<a href="https://www.tutorialspoint.com/android/android_acitivities.htm" target="_blank">An activity represents a single screen with a user interface just like window.</a>"<br/>
+				<b style="text-decoration:underline;">Service</b>: is a background service, it has no ui and can be ran/running after the user closes UI compenent of the application.<br/>
+				<b style="text-decoration:underline;">Receiver</b>: are listeners, they allow you to "catch" incoming actions. Ex. Notifications (You dont pull from the server every second, it's a push to the phone and the receiver catches it).
+			</p>
+
+
+
+			<p class="page-sub-title">Android Lifecycle</p>
+			<img src="http://i.stack.imgur.com/2CP6n.png" style="width:100%;max-width: 700px;">
+			<p class="common-text"><a target="_blank" href="http://i.stack.imgur.com/d4eF5.png">Open the more complex lifecycle with Fragments.</a></p>
+			<p class="common-text">
+				Summary of some of the lifecycle states in my words.<br/>
+				<br/>
+				<b>OnCreate</b>: This method is trigger when you open a window for the first time. The building of the UI Windows, and listeners are in this method.<br/>
+				<b>OnResume</b>: This method is trigger when you open a window for the first time, and when you return to app that was in the background (After you maximize the app).<br/>
+				<b>OnDestroy</b>: This method is trigger when you close the app completely.<br/>
+				<br/>
+			</p>
+
+
+			<p class="page-sub-title">Android Manifest</p>
+			<p class="common-text">
+				Every application must have an AndroidManifest.xml file (with precisely that name) in its root directory. The manifest file provides essential information about your app to the Android system, which the system must have before it can run any of the app's code.[<a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html" target="_blank">Source</a>]<br/>
+				<br/>
+				The Android Manifest contains information about the activities (windows), services, receivers, permissions, app name, app package name, etc. in your app. This is the roadmap for the application.
+			</p>
+
+
+			<p class="page-sub-title">Gradle</p>
+			<p class="common-text">
+				<b>Short Answer</b><br/>
+				Gradle is a build system.
+			</p>
+			<p class="common-text">
+				<b>Long Answer</b><br/>
+				Before Android Studio you were using Eclipse for your development purposes, and, chances are, you didn't know how to build your Android APK without Eclipse.
+
+				You can do this on the command line, but you have to learn what each tool (dx, aapt) does in SDK...<a href="http://stackoverflow.com/questions/16754643/what-is-gradle-in-android-studio" target="_blank">Show more</a>...
+			</p>
+			<p class="common-text">
+				Retrieved from <a href="http://stackoverflow.com/questions/16754643/what-is-gradle-in-android-studio" target="_blank">StackOverflow</a> and answered by <a href="http://stackoverflow.com/users/1509583/gagandeep-singh" target="_blank">Gagandeep Singh</a>
+			</p>
+
+			<p class="page-sub-title">Next Tutorial</p>
+			<p class="common-text">
+				<a href="http://kweaver00.github.io/Android-Samples/basics/single-window">Single Window</a> application
+			</p>
+
 		</div>
 	</div>
 </div>
