@@ -41,6 +41,13 @@
 
 	color: #2e2e2e;
 }
+.code-block-wrapper{
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
 .code-block{
 	font-size: 14px;
 	font-family: 'Lato', sans-serif;
