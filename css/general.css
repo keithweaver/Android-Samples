@@ -41,6 +41,28 @@
 
 	color: #2e2e2e;
 }
+.code-block{
+	font-size: 14px;
+	font-family: 'Lato', sans-serif;
+
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	color: #2e2e2e;
+
+	background-color: #f1f1f1;
+}
+.single-line-code{
+	font-size: 14px;
+	font-family: 'Lato', sans-serif;
+
+	margin-top: 0px;
+	margin-bottom: 0px;
+
+	color: #2e2e2e;
+
+	background-color: #f1f1f1;
+}
 /*
 Left Side
 */
