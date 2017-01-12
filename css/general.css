@@ -58,6 +58,9 @@
 	color: #2e2e2e;
 
 	background-color: #f1f1f1;
+
+	padding-left: 5px;
+	padding-right: 5px;
 }
 .single-line-code{
 	font-size: 14px;
