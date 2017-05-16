@@ -10,5 +10,5 @@ This repo started as a sandbox then changed into a list of examples. I use a lot
 
 I'd appreciate a star so I know people are using this repo.
 
-I'm slowly putting together a [github page](http://kweaver00.github.io/Android-Samples/).
+I'm slowly putting together a [github page](http://keithweaver.github.io/Android-Samples/).
 
