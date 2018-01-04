@@ -2,6 +2,8 @@
 
 R red and underlined, then rebuild.
 
+Going into developer mode on an Android device.
+
 ## Log
 
 Log isn't `console.log` but `log.i('test','test')`
@@ -28,3 +30,5 @@ public class Activity extends ApplicationContext {
     protected void onDestroy();
 }
 ```
+
+## Adding another Activity
