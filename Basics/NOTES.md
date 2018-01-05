@@ -6,6 +6,10 @@ Going into developer mode on an Android device.
 
 use Alt to view drop down options to import libraries when something is red. So Alt, it will highlight the first option, arrows to navigate or enter to accept.
 
+Need to install the SDK's and stuff.
+
+How to record a Android screen
+
 ## Log
 
 Log isn't `console.log` but `log.i('test','test')`
