@@ -9,7 +9,7 @@ import android.widget.Button;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+// https://code.tutsplus.com/tutorials/getting-started-with-retrofit-2--cms-27792
 // https://github.com/codepath/android_guides/wiki/Consuming-APIs-with-Retrofit
 public class MainActivity extends AppCompatActivity {
 
